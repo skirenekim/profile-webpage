@@ -53,7 +53,7 @@ export function Contact() {
         <h2 className="text-3xl font-bold mb-3 text-[#1e3a5f]">
           Let's Connect
         </h2>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+        <p className="text-lg text-slate-600 mx-auto text-pretty">
           I'm always open to discussing new opportunities, collaborations, or exchanging ideas.
         </p>
       </motion.div>
