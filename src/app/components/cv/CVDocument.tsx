@@ -6,7 +6,7 @@ import { educationData, certifications } from '../../../data/educationData';
 const PROFILE = {
   name: 'Seong Kyung Kim',
   title: 'Data Scientist',
-  subtitle: 'AI Systems · Data Platforms · ML-Driven Solutions',
+  subtitle: 'AI systems · Agent-powered automation · Analytical solutions for operational decision-making',
   email: 'keks1208@naver.com',
   linkedin: 'linkedin.com/in/seongkyung-kim',
   linkedinUrl: 'https://www.linkedin.com/in/seongkyung-kim',

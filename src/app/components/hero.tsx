@@ -66,7 +66,7 @@ export function Hero() {
               transition={{ delay: 0.5 }}
               className="text-xl text-[#CBDCEB] mb-6 leading-relaxed"
             >
-              Data Scientist specializing in AI Systems, Data Platforms, and ML-Driven Solutions
+              Data Scientist specializing in AI systems, agent-powered automation, and analytical solutions for operational decision-making
             </motion.p>
 
             <motion.div
