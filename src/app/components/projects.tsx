@@ -18,7 +18,7 @@ const personalProject = {
   ],
   techStack: ['C#', 'Unity', 'PyTorch', 'XLNet', 'NLP'],
   codeLink: '#',
-  trailerLink: '#',
+  trailerLink: 'https://drive.google.com/drive/u/1/folders/1v6dRpyBxNHmTCUJePssodrz8VAQVHD1l',
 };
 
 export function Projects() {
@@ -76,6 +76,8 @@ export function Projects() {
             </a>
             <a
               href={personalProject.trailerLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 bg-[#6D94C5] text-white rounded-lg hover:bg-[#5882b0] transition-all hover:scale-105 font-medium shadow-sm"
             >
               <ExternalLink className="w-4 h-4" />
