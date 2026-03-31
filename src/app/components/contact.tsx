@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { Mail, Linkedin, FileText, MessageCircle, Send } from 'lucide-react';
+import { Mail, Linkedin, FileText, MessageCircle, Send, Download } from 'lucide-react';
+import { useDownloadCV } from './cv/useDownloadCV';
 
 const contactInfo = [
   {
@@ -32,6 +34,15 @@ const contactInfo = [
 ];
 
 export function Contact() {
+  const { downloadCV } = useDownloadCV();
+  const [isGenerating, setIsGenerating] = useState(false);
+
+  const handleDownload = async () => {
+    setIsGenerating(true);
+    await downloadCV();
+    setIsGenerating(false);
+  };
+
   return (
     <div className="space-y-8">
       <motion.div
@@ -49,7 +60,7 @@ export function Contact() {
       </motion.div>
 
       {/* Contact Cards */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {contactInfo.map((contact, index) => {
           const Icon = contact.icon;
           return (
@@ -79,6 +90,31 @@ export function Contact() {
             </motion.a>
           );
         })}
+
+        {/* CV Download Card */}
+        <motion.button
+          onClick={handleDownload}
+          disabled={isGenerating}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          whileHover={{ scale: 1.05, y: -8 }}
+          className="relative bg-[#E8DFCA]/40 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-[#E8DFCA] overflow-hidden group text-left w-full disabled:opacity-70 disabled:cursor-wait"
+        >
+          <div className="relative z-10">
+            <div className="w-14 h-14 bg-[#7A9E7E] rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
+              <Download className="w-7 h-7 text-white" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">Academic CV</h3>
+            <p className="text-slate-600 text-sm font-medium">
+              {isGenerating ? 'Generating PDF...' : 'Download PDF'}
+            </p>
+            <div className="mt-4 flex items-center gap-2 text-[#7A9E7E] text-sm font-medium">
+              <Download className="w-4 h-4" />
+              <span>{isGenerating ? 'Please wait...' : 'Download now'}</span>
+            </div>
+          </div>
+        </motion.button>
       </div>
 
       {/* CTA Section */}

@@ -3,66 +3,13 @@ import { Award, MapPin } from 'lucide-react';
 import georgiaLogo from '../../../img/georgia_institute_of_technology_logo.jpeg';
 import lseLogo from '../../../img/london_school_of_economics_logo.jpeg';
 import cauLogo from '../../../img/chung_ang_university_logo.jpeg';
+import { educationData, certifications } from '../../data/educationData';
 
-interface EducationItem {
-  institution: string;
-  degree: string;
-  field: string;
-  period: string;
-  note?: string;
-  honor?: string;
-  iconBg: string;
-  location: string;
-  logo: string;
-}
-
-const educationData: EducationItem[] = [
-  {
-    institution: 'Georgia Institute of Technology',
-    degree: 'M.S.',
-    field: 'Computer Science',
-    period: '2022.01 - 2024.12',
-    note: 'Completed with corporate sponsorship from Krafton',
-    iconBg: 'bg-[#6D94C5]',
-    location: 'Atlanta, USA',
-    logo: georgiaLogo,
-  },
-  {
-    institution: 'London School of Economics and Political Science',
-    degree: 'M.S.',
-    field: 'Data & Society',
-    period: '2019.09 - 2020.12',
-    note: 'Thesis: Cyberbullying detection using deep learning',
-    iconBg: 'bg-[#9B8EA8]',
-    location: 'London, UK',
-    logo: lseLogo,
-  },
-  {
-    institution: 'Chung-Ang University',
-    degree: 'B.A.',
-    field: 'Media Communications',
-    period: '2015.02 - 2019.06',
-    honor: 'Magna Cum Laude',
-    iconBg: 'bg-[#C4785A]',
-    location: 'Seoul, Korea',
-    logo: cauLogo,
-  },
-];
-
-const certifications = [
-  {
-    title: 'Machine Learning Engineering for Production (MLOps)',
-    issuer: 'DeepLearning.AI',
-    date: '2021.10',
-    iconBg: 'bg-[#7A9E7E]',
-  },
-  {
-    title: 'TOEFL iBT',
-    issuer: 'Score: 114 / 120',
-    date: '2019.09',
-    iconBg: 'bg-[#C49A6C]',
-  },
-];
+const logoMap: Record<string, string> = {
+  'Georgia Institute of Technology': georgiaLogo,
+  'London School of Economics and Political Science': lseLogo,
+  'Chung-Ang University': cauLogo,
+};
 
 export function Education() {
   return (
@@ -80,7 +27,7 @@ export function Education() {
           >
             <div className="flex items-start gap-4">
               <div className="w-14 h-14 rounded-xl overflow-hidden border border-[#E8DFCA] shadow-sm flex-shrink-0 bg-white flex items-center justify-center">
-                <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain p-1" />
+                <img src={logoMap[edu.institution]} alt={edu.institution} className="w-full h-full object-contain p-1" />
               </div>
 
               <div className="flex-1">
