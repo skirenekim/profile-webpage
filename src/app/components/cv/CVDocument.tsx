@@ -8,8 +8,8 @@ const PROFILE = {
   title: 'Data Scientist',
   subtitle: 'User Behavior Analytics · Agentic AI · Applied ML',
   email: 'keks1208@naver.com',
-  linkedin: 'linkedin.com/in/seongkyung-kim',
-  linkedinUrl: 'https://www.linkedin.com/in/seongkyung-kim',
+  linkedin: 'linkedin.com/in/skirene',
+  linkedinUrl: 'https://www.linkedin.com/in/skirene/',
   website: 'skirenekim.github.io/profile-webpage',
   websiteUrl: 'https://skirenekim.github.io/profile-webpage',
 };

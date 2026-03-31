@@ -18,7 +18,7 @@ const personalProject = {
   ],
   techStack: ['C#', 'Unity', 'PyTorch', 'XLNet', 'NLP'],
   codeLink: '#',
-  trailerLink: 'https://drive.google.com/drive/u/1/folders/1v6dRpyBxNHmTCUJePssodrz8VAQVHD1l',
+  trailerLink: 'https://www.youtube.com/watch?feature=shared&v=aPyvwndMICs',
 };
 
 export function Projects() {

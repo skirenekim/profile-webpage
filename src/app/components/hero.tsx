@@ -88,7 +88,7 @@ export function Hero() {
               className="flex flex-wrap gap-3 justify-center md:justify-start"
             >
               <a
-                href="https://www.linkedin.com/in/seongkyung-kim"
+                href="https://www.linkedin.com/in/skirene/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 bg-[#F5EFE6] text-[#1e3a5f] rounded-lg hover:bg-[#E8DFCA] transition-all hover:scale-105 font-medium shadow-lg"
@@ -97,7 +97,7 @@ export function Hero() {
                 LinkedIn
               </a>
               <a
-                href="https://medium.com/@seongkyung-kim"
+                href="https://skirene.medium.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-6 py-3 bg-[#6D94C5]/20 backdrop-blur-sm text-white rounded-lg hover:bg-[#6D94C5]/30 transition-all hover:scale-105 font-medium border border-[#CBDCEB]/30"
