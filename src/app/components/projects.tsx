@@ -17,7 +17,7 @@ const personalProject = {
     'Implemented core gameplay and NPC interaction systems using the Unity engine',
   ],
   techStack: ['C#', 'Unity', 'PyTorch', 'XLNet', 'NLP'],
-  codeLink: 'https://drive.google.com/drive/u/1/folders/1v6dRpyBxNHmTCUJePssodrz8VAQVHD1l',
+  codeLink: 'https://drive.google.com/drive/folders/1v6dRpyBxNHmTCUJePssodrz8VAQVHD1l?usp=share_link',
   trailerLink: 'https://www.youtube.com/watch?feature=shared&v=aPyvwndMICs',
 };
 
