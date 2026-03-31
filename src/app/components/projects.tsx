@@ -17,7 +17,7 @@ const personalProject = {
     'Implemented core gameplay and NPC interaction systems using the Unity engine',
   ],
   techStack: ['C#', 'Unity', 'PyTorch', 'XLNet', 'NLP'],
-  codeLink: '#',
+  codeLink: 'https://drive.google.com/drive/u/1/folders/1v6dRpyBxNHmTCUJePssodrz8VAQVHD1l',
   trailerLink: 'https://www.youtube.com/watch?feature=shared&v=aPyvwndMICs',
 };
 
@@ -69,6 +69,8 @@ export function Projects() {
           <div className="flex flex-wrap gap-3 mb-6">
             <a
               href={personalProject.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-5 py-2.5 bg-[#1e3a5f] text-white rounded-lg hover:bg-[#2d4e6e] transition-all hover:scale-105 font-medium shadow-sm"
             >
               <Github className="w-4 h-4" />
