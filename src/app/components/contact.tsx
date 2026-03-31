@@ -54,8 +54,7 @@ export function Contact() {
           Let's Connect
         </h2>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          I'm always open to discussing new opportunities, collaborations, or
-          exchanging ideas on data science and machine learning.
+          I'm always open to discussing new opportunities, collaborations, or exchanging ideas.
         </p>
       </motion.div>
 
