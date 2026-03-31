@@ -12,16 +12,15 @@ export const styles = StyleSheet.create({
     paddingRight: 44,
   },
   // Header
-  header: { marginBottom: 16 },
-  name: { fontSize: 22, fontFamily: 'Helvetica-Bold', lineHeight: 1.2, marginBottom: 6, textAlign: 'center' },
+  header: { marginBottom: 12 },
+  name: { fontSize: 24, fontFamily: 'Helvetica-Bold', lineHeight: 1.2, marginBottom: 10, textAlign: 'center' },
   title: { fontSize: 11, color: '#666', lineHeight: 1.25, marginBottom: 6, textAlign: 'center' },
   contactLine: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', marginBottom: 14, justifyContent: 'center' },
   contactLabel: { fontSize: 8.5, color: '#999999', fontFamily: 'Helvetica-Bold', textTransform: 'uppercase', letterSpacing: 0.5 },
-  contactSep: { fontSize: 9, color: '#cccccc' },
+  contactSep: { fontSize: 9, color: '#cccccc', marginLeft: 10, marginRight: 10 },
   contactText: { fontSize: 9, color: '#555' },
   contactLink: { fontSize: 9, color: '#2563eb', textDecoration: 'none' },
-  contactLabelLink: { fontSize: 8.5, color: '#999999', fontFamily: 'Helvetica-Bold', textTransform: 'uppercase', letterSpacing: 0.5, textDecoration: 'none' },
-  nameDivider: { borderBottomWidth: 1, borderBottomColor: '#cccccc', marginTop: 8, marginBottom: 10 },
+  contactLabelLink: { fontSize: 9.5, color: '#333333', fontFamily: 'Helvetica-Bold', textTransform: 'uppercase', letterSpacing: 0.3, textDecoration: 'none' },
   divider: { borderBottomWidth: 1, borderBottomColor: '#cccccc', marginBottom: 4 },
   // Section
   sectionTitle: {

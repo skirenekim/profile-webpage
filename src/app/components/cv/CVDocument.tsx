@@ -40,7 +40,6 @@ export function CVDocument() {
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.name}>{PROFILE.name}</Text>
-          <View style={styles.nameDivider} />
           <View style={styles.contactLine}>
             <Link src={`mailto:${PROFILE.email}`} style={styles.contactLabelLink}>Email</Link>
             <Text style={styles.contactSep}>  |  </Text>

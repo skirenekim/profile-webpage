@@ -32,18 +32,18 @@ const statLinks = [
 export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
   return (
     <div className="space-y-12">
-      {/* Introduction */}
+
+      {/* Bio + Stats — two-column, no card wrappers */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-3xl p-8 shadow-sm border border-[#E8DFCA]"
+        className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-10 items-start"
       >
-        <h2 className="text-3xl font-bold mb-6 text-[#1e3a5f]">
-          About Me
-        </h2>
-        <div className="space-y-5">
-          {/* Theme chips */}
-          <div className="flex flex-wrap gap-2">
+        {/* Left: bio */}
+        <div>
+          <h2 className="text-3xl font-bold mb-5 text-[#1e3a5f]">About Me</h2>
+
+          <div className="flex flex-wrap gap-2 mb-6">
             {['Agentic AI', 'Applied ML', 'Responsible AI', 'User Behavior Analytics'].map((theme) => (
               <span
                 key={theme}
@@ -54,58 +54,54 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
             ))}
           </div>
 
-          {/* Professional */}
-          <div className="border-l-2 border-[#6D94C5] pl-4">
-            <p className="text-xs font-bold text-[#6D94C5] uppercase tracking-widest mb-2">Professional</p>
-            <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
-              I am a Data Scientist who applies AI and machine learning to automate workflows, improve analytical systems, and support better operational decision-making. My work sits at the intersection of user behavior analytics, applied machine learning, agentic AI, and system improvement, with a focus on turning complex, fragmented processes into scalable and practical solutions. I am particularly interested in understanding user behavior and building analytical systems that translate machine learning into meaningful, measurable impact.
-            </p>
-          </div>
+          <div className="space-y-5">
+            <div className="border-l-2 border-[#6D94C5] pl-4">
+              <p className="text-xs font-bold text-[#6D94C5] uppercase tracking-widest mb-2">Professional</p>
+              <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
+                I am a Data Scientist who applies AI and machine learning to automate workflows, improve analytical systems, and support better operational decision-making. My work sits at the intersection of user behavior analytics, applied machine learning, agentic AI, and system improvement, with a focus on turning complex, fragmented processes into scalable and practical solutions. I am particularly interested in understanding user behavior and building analytical systems that translate machine learning into meaningful, measurable impact.
+              </p>
+            </div>
 
-          {/* Perspective */}
-          <div className="border-l-2 border-[#C49A6C] pl-4">
-            <p className="text-xs font-bold text-[#C49A6C] uppercase tracking-widest mb-2">Perspective</p>
-            <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
-              <span className="italic">Beyond my professional work,</span> I am deeply interested in how AI is transforming the way people live, think, and interact with the world. I care not only about what these rapidly evolving technologies can do, but also about how they shape human cognition, behavior, and society. This interest has long shaped my work, from applying deep learning to challenges such as cyberbullying, depression, and anti-cheat systems to now exploring the new possibilities that agentic AI may unlock. Ultimately, I want to better understand not only how AI transforms people and institutions, but also how we can guide that transformation responsibly by building AI systems that are safe, healthy, and socially beneficial.
-            </p>
+            <div className="border-l-2 border-[#C49A6C] pl-4">
+              <p className="text-xs font-bold text-[#C49A6C] uppercase tracking-widest mb-2">Perspective</p>
+              <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
+                <span className="italic">Beyond my professional work,</span> I am deeply interested in how AI is transforming the way people live, think, and interact with the world. I care not only about what these rapidly evolving technologies can do, but also about how they shape human cognition, behavior, and society. This interest has long shaped my work, from applying deep learning to challenges such as cyberbullying, depression, and anti-cheat systems to now exploring the new possibilities that agentic AI may unlock. Ultimately, I want to better understand not only how AI transforms people and institutions, but also how we can guide that transformation responsibly by building AI systems that are safe, healthy, and socially beneficial.
+              </p>
+            </div>
           </div>
         </div>
-      </motion.div>
 
-      {/* Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-4"
-      >
-        {statLinks.map((stat, index) => {
-          const content = (
-            <>
-              <div className="text-3xl font-bold text-[#6D94C5] mb-1">{stat.value}</div>
-              <div className="text-sm text-slate-500">{stat.label}</div>
-            </>
-          );
-          const baseClass = "block w-full bg-white rounded-2xl p-5 shadow-sm text-center border border-[#E8DFCA] transition-all hover:shadow-md hover:border-[#CBDCEB] cursor-pointer";
-          return (
+        {/* Right: stats sidebar — no card boxes */}
+        <div className="flex flex-col gap-0 pt-1 md:pt-[3.25rem]">
+          {statLinks.map((stat, index) => (
             <motion.div
               key={stat.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.35 + index * 0.1 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 + index * 0.08 }}
             >
               {'href' in stat ? (
-                <a href={stat.href} target="_blank" rel="noopener noreferrer" className={baseClass}>
-                  {content}
+                <a
+                  href={stat.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border-b border-[#E8DFCA] py-5 hover:bg-[#F5EFE6] transition-colors px-2 -mx-2 rounded"
+                >
+                  <div className="text-2xl font-bold text-[#6D94C5] mb-0.5">{stat.value}</div>
+                  <div className="text-sm text-slate-500">{stat.label}</div>
                 </a>
               ) : (
-                <button onClick={() => onNavigate(stat.tab!)} className={baseClass}>
-                  {content}
+                <button
+                  onClick={() => onNavigate(stat.tab!)}
+                  className="w-full text-left border-b border-[#E8DFCA] py-5 hover:bg-[#F5EFE6] transition-colors px-2 -mx-2 rounded cursor-pointer"
+                >
+                  <div className="text-2xl font-bold text-[#6D94C5] mb-0.5">{stat.value}</div>
+                  <div className="text-sm text-slate-500">{stat.label}</div>
                 </button>
               )}
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </motion.div>
 
       {/* Highlights Grid */}
@@ -124,28 +120,23 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
               <div className={`w-14 h-14 ${highlight.bg} rounded-xl flex items-center justify-center mb-4 shadow-sm`}>
                 <Icon className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
-                {highlight.title}
-              </h3>
-              <p className="text-slate-600 leading-relaxed">
-                {highlight.description}
-              </p>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">{highlight.title}</h3>
+              <p className="text-slate-600 leading-relaxed">{highlight.description}</p>
             </motion.div>
           );
         })}
       </div>
 
-      {/* Skills Section */}
+      {/* Skills — two separate cards */}
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Core Expertise */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-[#CBDCEB]/30 rounded-2xl p-6 border border-[#CBDCEB]"
+          className="rounded-2xl bg-[#CBDCEB]/40 p-6 md:p-8 border border-[#CBDCEB] shadow-sm"
         >
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#6D94C5] rounded-full"></span>
+          <h3 className="text-sm font-bold text-[#3d6a9e] uppercase tracking-widest mb-4 flex items-center gap-2">
+            <span className="w-2 h-2 bg-[#6D94C5] rounded-full" />
             Core Expertise
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -158,7 +149,7 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
             ].map((skill) => (
               <span
                 key={skill}
-                className="px-4 py-2 bg-white text-[#3d6a9e] rounded-lg text-sm font-medium shadow-sm border border-[#CBDCEB]"
+                className="px-3 py-1.5 bg-white/70 text-[#3d6a9e] rounded-lg text-sm font-medium border border-[#CBDCEB]"
               >
                 {skill}
               </span>
@@ -166,15 +157,14 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
           </div>
         </motion.div>
 
-        {/* Technical Skills */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-[#E8DFCA]/50 rounded-2xl p-6 border border-[#E8DFCA]"
+          className="rounded-2xl bg-[#E8DFCA]/60 p-6 md:p-8 border border-[#E8DFCA] shadow-sm"
         >
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <span className="w-2 h-2 bg-[#6D94C5] rounded-full"></span>
+          <h3 className="text-sm font-bold text-slate-600 uppercase tracking-widest mb-4 flex items-center gap-2">
+            <span className="w-2 h-2 bg-[#C49A6C] rounded-full" />
             Technical Skills
           </h3>
           <div className="flex flex-wrap gap-2">
@@ -191,7 +181,7 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
             ].map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1.5 bg-white text-slate-700 rounded-lg text-sm font-medium shadow-sm border border-[#E8DFCA]"
+                className="px-3 py-1.5 bg-white/70 text-slate-700 rounded-lg text-sm font-medium border border-[#E8DFCA]"
               >
                 {tech}
               </span>
@@ -199,6 +189,7 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
           </div>
         </motion.div>
       </div>
+
     </div>
   );
 }
