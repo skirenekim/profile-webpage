@@ -10,6 +10,8 @@ const PROFILE = {
   email: 'keks1208@naver.com',
   linkedin: 'linkedin.com/in/seongkyung-kim',
   linkedinUrl: 'https://www.linkedin.com/in/seongkyung-kim',
+  website: 'skirenekim.github.io/profile-webpage',
+  websiteUrl: 'https://skirenekim.github.io/profile-webpage',
 };
 
 const SKILLS = {
@@ -40,9 +42,14 @@ export function CVDocument() {
           <Text style={styles.name}>{PROFILE.name}</Text>
           <Text style={styles.title}>{PROFILE.title} — {PROFILE.subtitle}</Text>
           <View style={styles.contactLine}>
+            <Text style={styles.contactLabel}>Email </Text>
             <Link src={`mailto:${PROFILE.email}`} style={styles.contactLink}>{PROFILE.email}</Link>
-            <Text style={styles.contactText}>·</Text>
+            <Text style={styles.contactSep}>  |  </Text>
+            <Text style={styles.contactLabel}>LinkedIn </Text>
             <Link src={PROFILE.linkedinUrl} style={styles.contactLink}>{PROFILE.linkedin}</Link>
+            <Text style={styles.contactSep}>  |  </Text>
+            <Text style={styles.contactLabel}>Web </Text>
+            <Link src={PROFILE.websiteUrl} style={styles.contactLink}>{PROFILE.website}</Link>
           </View>
           <View style={styles.divider} />
         </View>
