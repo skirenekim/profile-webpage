@@ -4,4 +4,4 @@ dist/
 *.pdf
 .claude
 *.md
-.github/*
+.github/workflows
