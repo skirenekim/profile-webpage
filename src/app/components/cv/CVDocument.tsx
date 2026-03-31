@@ -6,7 +6,7 @@ import { educationData, certifications } from '../../../data/educationData';
 const PROFILE = {
   name: 'Seong Kyung Kim',
   title: 'Data Scientist',
-  subtitle: 'AI systems · Agent-powered automation · Analytical solutions for operational decision-making',
+  subtitle: 'User Behavior Analytics · Agentic AI · Applied ML',
   email: 'keks1208@naver.com',
   linkedin: 'linkedin.com/in/seongkyung-kim',
   linkedinUrl: 'https://www.linkedin.com/in/seongkyung-kim',
@@ -15,8 +15,8 @@ const PROFILE = {
 };
 
 const SKILLS = {
-  core: ['User Behavior Analysis', 'Statistical Modeling', 'Applied Machine Learning', 'Data-Driven Decision Making'],
-  technical: ['Python', 'Spark', 'SQL', 'PyTorch', 'TensorFlow', 'Databricks', 'Tableau', 'Docker', 'S3'],
+  core: ['Agentic AI Systems', 'Anomaly Detection', 'Applied Machine Learning', 'Data-Driven Decision Making', 'User Behavior Analytics'],
+  technical: ['Databricks', 'Docker', 'PyTorch', 'Python', 'S3', 'Spark', 'SQL', 'Tableau', 'TensorFlow'],
 };
 
 const PRESENTATIONS = [
@@ -40,18 +40,23 @@ export function CVDocument() {
         {/* Header */}
         <View style={styles.header}>
           <Text style={styles.name}>{PROFILE.name}</Text>
-          <Text style={styles.title}>{PROFILE.title} — {PROFILE.subtitle}</Text>
+          <View style={styles.nameDivider} />
           <View style={styles.contactLine}>
-            <Text style={styles.contactLabel}>Email </Text>
-            <Link src={`mailto:${PROFILE.email}`} style={styles.contactLink}>{PROFILE.email}</Link>
+            <Link src={`mailto:${PROFILE.email}`} style={styles.contactLabelLink}>Email</Link>
             <Text style={styles.contactSep}>  |  </Text>
-            <Text style={styles.contactLabel}>LinkedIn </Text>
-            <Link src={PROFILE.linkedinUrl} style={styles.contactLink}>{PROFILE.linkedin}</Link>
+            <Link src={PROFILE.linkedinUrl} style={styles.contactLabelLink}>LinkedIn</Link>
             <Text style={styles.contactSep}>  |  </Text>
-            <Text style={styles.contactLabel}>Web </Text>
-            <Link src={PROFILE.websiteUrl} style={styles.contactLink}>{PROFILE.website}</Link>
+            <Link src={PROFILE.websiteUrl} style={styles.contactLabelLink}>Web</Link>
           </View>
           <View style={styles.divider} />
+        </View>
+
+        {/* Areas of Interest */}
+        <Text style={styles.sectionTitle}>Areas of Interest</Text>
+        <View style={styles.skillRow}>
+          <Text style={styles.skillValue}>
+            Agentic AI · Applied Machine Learning · Human-Centered Computing · Responsible AI · Social Computing · User Behavior Analysis
+          </Text>
         </View>
 
         {/* Professional Experience */}
@@ -120,8 +125,10 @@ export function CVDocument() {
         {PRESENTATIONS.map((p) => (
           <View key={p.title} style={{ marginBottom: 9 }}>
             <Text style={styles.presentationTitle}>{p.title}</Text>
-            <Text style={styles.presentationMeta}>{p.venue} · {p.date} · {p.location}</Text>
-            <Link src={p.url} style={styles.presentationLink}>View Session →</Link>
+            <View style={styles.row}>
+              <Text style={styles.presentationMeta}>{p.venue} · {p.date} · {p.location}</Text>
+              <Link src={p.url} style={styles.presentationLink}>View Session</Link>
+            </View>
           </View>
         ))}
 

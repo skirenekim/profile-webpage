@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    value: 'linkedin.com/in/seongkyung-kim',
+    value: 'View Profile',
     link: 'https://www.linkedin.com/in/seongkyung-kim',
     iconBg: 'bg-[#6D94C5]',
     cardBg: 'bg-[#CBDCEB]/25',
@@ -16,7 +16,7 @@ const contactInfo = [
   {
     icon: FileText,
     label: 'Medium',
-    value: 'medium.com/@seongkyung-kim',
+    value: 'Read Articles',
     link: 'https://medium.com/@seongkyung-kim',
     iconBg: 'bg-[#9B8EA8]',
     cardBg: 'bg-[#E8DFCA]/40',
@@ -25,7 +25,7 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'keks1208@naver.com',
+    value: 'Send a Message',
     link: 'mailto:keks1208@naver.com',
     iconBg: 'bg-[#C4785A]',
     cardBg: 'bg-[#CBDCEB]/25',

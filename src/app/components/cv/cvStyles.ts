@@ -13,13 +13,15 @@ export const styles = StyleSheet.create({
   },
   // Header
   header: { marginBottom: 16 },
-  name: { fontSize: 22, fontFamily: 'Helvetica-Bold', lineHeight: 1.2, marginBottom: 6 },
-  title: { fontSize: 11, color: '#666', lineHeight: 1.25, marginBottom: 6 },
-  contactLine: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', marginBottom: 14 },
+  name: { fontSize: 22, fontFamily: 'Helvetica-Bold', lineHeight: 1.2, marginBottom: 6, textAlign: 'center' },
+  title: { fontSize: 11, color: '#666', lineHeight: 1.25, marginBottom: 6, textAlign: 'center' },
+  contactLine: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', marginBottom: 14, justifyContent: 'center' },
   contactLabel: { fontSize: 8.5, color: '#999999', fontFamily: 'Helvetica-Bold', textTransform: 'uppercase', letterSpacing: 0.5 },
   contactSep: { fontSize: 9, color: '#cccccc' },
   contactText: { fontSize: 9, color: '#555' },
   contactLink: { fontSize: 9, color: '#2563eb', textDecoration: 'none' },
+  contactLabelLink: { fontSize: 8.5, color: '#999999', fontFamily: 'Helvetica-Bold', textTransform: 'uppercase', letterSpacing: 0.5, textDecoration: 'none' },
+  nameDivider: { borderBottomWidth: 1, borderBottomColor: '#cccccc', marginTop: 8, marginBottom: 10 },
   divider: { borderBottomWidth: 1, borderBottomColor: '#cccccc', marginBottom: 4 },
   // Section
   sectionTitle: {
@@ -32,8 +34,8 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1.5,
     borderBottomColor: '#cccccc',
     paddingBottom: 4,
-    marginBottom: 9,
-    marginTop: 16,
+    marginBottom: 8,
+    marginTop: 12,
   },
   // Experience
   row: {
@@ -47,20 +49,20 @@ export const styles = StyleSheet.create({
   period: { fontSize: 9, color: '#666666', flexShrink: 0 },
   projectTitle: { fontSize: 9.5, fontFamily: 'Helvetica', lineHeight: 1.2, marginBottom: 2, flex: 1, marginRight: 8 },
   projectOutcome: { fontSize: 9, color: '#555555', lineHeight: 1.4, marginLeft: 8, marginBottom: 8 },
-  jobBlock: { marginTop: 3, marginBottom: 12 },
+  jobBlock: { marginTop: 3, marginBottom: 9 },
   // Education
   institution: { fontSize: 11, fontFamily: 'Helvetica-Bold', lineHeight: 1.2, marginBottom: 2 },
   degree: { fontSize: 10, fontFamily: 'Helvetica-Oblique', color: '#555555', lineHeight: 1.25, marginBottom: 2 },
   location: { fontSize: 9, color: '#666666' },
   honor: { fontSize: 9, color: '#7a5c2e', lineHeight: 1.2, marginLeft: 8, marginBottom: 4 },
   note: { fontSize: 9, color: '#555555', lineHeight: 1.35, marginLeft: 8, marginBottom: 7 },
-  eduBlock: { marginTop: 3, marginBottom: 12 },
+  eduBlock: { marginTop: 3, marginBottom: 9 },
   // Skills
   skillRow: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 9 },
   skillLabel: { fontFamily: 'Helvetica-Bold', fontSize: 9.5, lineHeight: 1.2, minWidth: 115, marginRight: 12 },
   skillValue: { fontSize: 9.5, color: '#444444', lineHeight: 1.3, flex: 1 },
   // Presentations
-  presentationTitle: { fontSize: 10, fontFamily: 'Helvetica', lineHeight: 1.3, marginBottom: 2 },
-  presentationMeta: { fontSize: 9, color: '#444444', lineHeight: 1.3, marginBottom: 3 },
-  presentationLink: { fontSize: 9, color: '#2563eb', lineHeight: 1.2, textDecoration: 'underline' },
+  presentationTitle: { fontSize: 10, fontFamily: 'Helvetica', lineHeight: 1.3, marginBottom: 3 },
+  presentationMeta: { fontSize: 9, color: '#444444', lineHeight: 1.3, flex: 1 },
+  presentationLink: { fontSize: 9, color: '#2563eb', lineHeight: 1.2, textDecoration: 'underline', flexShrink: 0 },
 });

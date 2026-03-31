@@ -4,7 +4,7 @@ import profilePic from '../../../img/profile_pic.JPG';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#1e3a5f] text-white">
+    <section className="relative overflow-hidden bg-[#2a4f7c] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Profile image */}
@@ -60,14 +60,26 @@ export function Hero() {
               </p>
             </motion.div>
 
-            <motion.p
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-xl text-[#CBDCEB] mb-6 leading-relaxed"
+              className="mb-6"
             >
-              Data Scientist specializing in AI systems, agent-powered automation, and analytical solutions for operational decision-making
-            </motion.p>
+              <p className="text-base md:text-lg text-[#E8DFCA] mb-3 tracking-wide font-medium">
+                Data Scientist
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                {['Agentic AI', 'Applied ML', 'User Behavior Analytics'].map((kw) => (
+                  <span
+                    key={kw}
+                    className="px-3 py-1 bg-[#6D94C5]/25 backdrop-blur-sm text-[#CBDCEB] rounded-full text-sm border border-[#CBDCEB]/30 font-medium"
+                  >
+                    {kw}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -95,27 +107,10 @@ export function Hero() {
               </a>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-              className="mt-8 flex flex-wrap gap-2 justify-center md:justify-start"
-            >
-              {['Python', 'ML/AI', 'Spark', 'Databricks'].map((tech, index) => (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1 + index * 0.1 }}
-                  className="px-3 py-1 bg-[#6D94C5]/20 backdrop-blur-sm text-[#CBDCEB] rounded-full text-sm border border-[#CBDCEB]/20"
-                >
-                  {tech}
-                </motion.span>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </div>
+
     </section>
   );
 }

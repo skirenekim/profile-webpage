@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Award, TrendingUp, Zap, ExternalLink } from 'lucide-react';
+import { Award, TrendingUp, GraduationCap, ExternalLink } from 'lucide-react';
 
 const updates = [
   {
@@ -27,18 +27,6 @@ const updates = [
     linkLabel: null,
   },
   {
-    icon: Zap,
-    title: 'Agent-Based Automation System',
-    description: 'Deployed an LLM-driven agent workflow that reduced recurring reporting workload by ~7 person-days per month',
-    date: 'Nov 2025',
-    location: null,
-    iconBg: 'bg-[#9B8EA8]',
-    cardBg: 'bg-[#CBDCEB]/25',
-    border: 'border-[#CBDCEB]',
-    link: null,
-    linkLabel: null,
-  },
-  {
     icon: TrendingUp,
     title: 'Data Scientist at Electronic Arts',
     description: 'Joined EA to build advanced analytics and AI systems for FC Online 4',
@@ -47,6 +35,18 @@ const updates = [
     iconBg: 'bg-[#7A9E7E]',
     cardBg: 'bg-[#E8DFCA]/40',
     border: 'border-[#E8DFCA]',
+    link: null,
+    linkLabel: null,
+  },
+  {
+    icon: GraduationCap,
+    title: 'M.S. Computer Science — Georgia Tech',
+    description: 'Graduated from Georgia Institute of Technology with a Master\'s in Computer Science, completed with corporate sponsorship from Krafton',
+    date: 'Dec 2024',
+    location: 'Atlanta, USA',
+    iconBg: 'bg-[#9B8EA8]',
+    cardBg: 'bg-[#CBDCEB]/25',
+    border: 'border-[#CBDCEB]',
     link: null,
     linkLabel: null,
   },
