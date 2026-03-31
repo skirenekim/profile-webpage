@@ -114,7 +114,7 @@ export function CVDocument() {
           <View key={p.title} style={{ marginBottom: 9 }}>
             <Text style={styles.presentationTitle}>{p.title}</Text>
             <Text style={styles.presentationMeta}>{p.venue} · {p.date} · {p.location}</Text>
-            <Link src={p.url} style={styles.presentationLink}>{p.url}</Link>
+            <Link src={p.url} style={styles.presentationLink}>View Session →</Link>
           </View>
         ))}
 

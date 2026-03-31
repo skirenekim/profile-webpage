@@ -56,9 +56,9 @@ export const styles = StyleSheet.create({
   // Skills
   skillRow: { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 9 },
   skillLabel: { fontFamily: 'Helvetica-Bold', fontSize: 9.5, lineHeight: 1.2, minWidth: 115, marginRight: 12 },
-  skillValue: { fontSize: 9.5, color: '#444444', lineHeight: 1.3, flexShrink: 1 },
+  skillValue: { fontSize: 9.5, color: '#444444', lineHeight: 1.3, flex: 1 },
   // Presentations
   presentationTitle: { fontSize: 10, fontFamily: 'Helvetica', lineHeight: 1.3, marginBottom: 2 },
   presentationMeta: { fontSize: 9, color: '#444444', lineHeight: 1.3, marginBottom: 3 },
-  presentationLink: { fontSize: 9, color: '#2563eb', lineHeight: 1.2, textDecoration: 'none' },
+  presentationLink: { fontSize: 9, color: '#2563eb', lineHeight: 1.2, textDecoration: 'underline' },
 });
