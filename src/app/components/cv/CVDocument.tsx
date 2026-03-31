@@ -30,7 +30,7 @@ const PRESENTATIONS = [
 export function CVDocument() {
   return (
     <Document
-      title={`${PROFILE.name} — Academic CV`}
+      title={`${PROFILE.name} — CV`}
       author={PROFILE.name}
     >
       <Page size="A4" style={styles.page}>
@@ -88,7 +88,7 @@ export function CVDocument() {
         {/* Additional Qualifications */}
         <Text style={styles.sectionTitle}>Additional Qualifications</Text>
         {certifications.map((cert) => (
-          <View key={cert.title} style={{ marginBottom: 4 }}>
+          <View key={cert.title} style={{ marginBottom: 8 }}>
             <View style={styles.row}>
               <Text style={styles.projectTitle}>{cert.title}</Text>
               <Text style={styles.period}>{cert.date}</Text>
@@ -111,7 +111,7 @@ export function CVDocument() {
         {/* Conference Presentations */}
         <Text style={styles.sectionTitle}>Conference Presentations</Text>
         {PRESENTATIONS.map((p) => (
-          <View key={p.title} style={{ marginBottom: 6 }}>
+          <View key={p.title} style={{ marginBottom: 9 }}>
             <Text style={styles.presentationTitle}>{p.title}</Text>
             <Text style={styles.presentationMeta}>{p.venue} · {p.date} · {p.location}</Text>
             <Link src={p.url} style={styles.presentationLink}>{p.url}</Link>

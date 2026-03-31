@@ -105,7 +105,7 @@ export function Contact() {
             <div className="w-14 h-14 bg-[#7A9E7E] rounded-xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
               <Download className="w-7 h-7 text-white" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-2">Academic CV</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">CV</h3>
             <p className="text-slate-600 text-sm font-medium">
               {isGenerating ? 'Generating PDF...' : 'Download PDF'}
             </p>
