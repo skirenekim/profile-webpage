@@ -5,15 +5,17 @@ import { About } from './components/about';
 import { Education } from './components/education';
 import { Experience } from './components/experience';
 import { Updates } from './components/updates';
+import { Research } from './components/research';
 import { Projects } from './components/projects';
 import { Contact } from './components/contact';
-import { User, Briefcase, GraduationCap, Code, TrendingUp, Mail } from 'lucide-react';
+import { User, Briefcase, GraduationCap, Code, TrendingUp, Lightbulb, Mail } from 'lucide-react';
 
 const tabs = [
   { id: 'about', label: 'About', icon: User },
   { id: 'updates', label: 'Updates', icon: TrendingUp },
   { id: 'experience', label: 'Experience', icon: Briefcase },
   { id: 'education', label: 'Education', icon: GraduationCap },
+  { id: 'research', label: 'Research', icon: Lightbulb },
   { id: 'projects', label: 'Projects', icon: Code },
   { id: 'contact', label: 'Contact', icon: Mail },
 ];
@@ -27,6 +29,8 @@ export default function App() {
         return <About onNavigate={setActiveTab} />;
       case 'updates':
         return <Updates onNavigate={setActiveTab} />;
+      case 'research':
+        return <Research />;
       case 'experience':
         return <Experience />;
       case 'education':
