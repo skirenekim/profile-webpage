@@ -9,6 +9,7 @@ export const nowData = {
     { keyword: 'Human-Centered AI Design', text: 'How AI agents can be designed to reason and act in alignment with human cognitive and social patterns — fostering interactions that are safe, constructive, and enhance the quality and efficiency of human work' },
     { keyword: 'Social and Behavioral Effects of Agentic AI', text: 'How interacting with agentic AI shapes human reasoning, trust, and collaboration in social and organizational settings' },
     { keyword: 'AI and the Future of Work', text: 'How agentic AI reshapes cognition, behavior, and wellbeing in workplace settings — and what it means for the design of systems that support healthier and more effective work' },
+    { keyword: 'Agent Behavior in Social Contexts', text: 'How AI agents act, communicate, and make decisions within human social settings — and how shaping those behaviors around human cognitive and social patterns is a practical path toward responsible AI' },
   ],
   tags: ['Human-Centered AI', 'Social Computing', 'Agentic AI', 'Cognitive Effects'],
   ctaText: 'Interested in this? Let\'s exchange notes.',
