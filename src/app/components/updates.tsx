@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { Award, TrendingUp, GraduationCap, ExternalLink, MapPin } from 'lucide-react';
+import { Award, TrendingUp, GraduationCap, ExternalLink, ArrowRight, MapPin, Lightbulb } from 'lucide-react';
+import { nowData } from '../../data/nowData';
 
 const milestones = [
   {
@@ -85,7 +86,47 @@ export function Updates({ onNavigate: _onNavigate }: { onNavigate: (tab: string)
         <h2 className="text-3xl font-bold mb-3 text-[#1e3a5f]">
           Recent Updates
         </h2>
-        <p className="text-slate-600">Latest achievements and milestones</p>
+        <p className="text-slate-600">What I'm exploring now — and recent milestones</p>
+      </motion.div>
+
+      {/* Currently Thinking About */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="rounded-xl border border-[#C4785A]/40 px-8 py-8 space-y-5"
+      >
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Lightbulb className="w-4 h-4 text-[#C4785A]" />
+            <span className="text-[#C4785A] text-xs font-bold uppercase tracking-widest">Currently Thinking About</span>
+          </div>
+          <span className="text-slate-400 text-xs">{nowData.updatedDate}</span>
+        </div>
+
+        <p className="text-[0.9375rem] text-[#1e3a5f] font-medium leading-relaxed">
+          {nowData.motivation}
+        </p>
+
+        <ul className="space-y-4">
+          {nowData.interests.map((interest, i) => (
+            <li key={i} className="flex items-start gap-3">
+              <span className="mt-[0.35rem] w-1.5 h-1.5 rounded-full bg-[#C4785A] shrink-0" />
+              <div>
+                <p className="text-[0.65rem] font-bold text-[#C4785A] uppercase tracking-widest mb-1">{interest.keyword}</p>
+                <p className="text-sm text-slate-600 leading-relaxed">{interest.text}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href={nowData.ctaLink}
+          className="inline-flex items-center gap-2 text-[#C4785A] text-sm font-semibold hover:text-[#1e3a5f] transition-colors"
+        >
+          {nowData.ctaText}
+          <ArrowRight className="w-4 h-4" />
+        </a>
       </motion.div>
 
       {/* Vertical Timeline */}

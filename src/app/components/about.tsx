@@ -1,7 +1,5 @@
-import { motion, AnimatePresence } from 'motion/react';
-import { useState } from 'react';
-import { Zap, Target, Heart, Lightbulb, ChevronDown, ArrowRight } from 'lucide-react';
-import { nowData } from '../../data/nowData';
+import { motion } from 'motion/react';
+import { Zap, Target, Heart } from 'lucide-react';
 
 const highlights = [
   {
@@ -32,8 +30,6 @@ const statLinks = [
 ];
 
 export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
-  const [thinkingOpen, setThinkingOpen] = useState(false);
-
   return (
     <div className="space-y-12">
 
@@ -71,67 +67,6 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
               <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
                 <span className="italic">Beyond my professional work,</span> I am deeply interested in how AI is transforming the way people live, think, and interact with the world. I care not only about what these rapidly evolving technologies can do, but also about how they shape human cognition, behavior, and society. This interest has long shaped my work, from applying deep learning to challenges such as cyberbullying, depression, and anti-cheat systems to now exploring the new possibilities that agentic AI may unlock. Ultimately, I want to better understand not only how AI transforms people and institutions, but also how we can guide that transformation responsibly by building AI systems that are safe, healthy, and socially beneficial.
               </p>
-            </div>
-
-            {/* Currently Thinking About — collapsible */}
-            <div className="rounded-xl border border-[#C4785A]/40">
-              <button
-                onClick={() => setThinkingOpen(!thinkingOpen)}
-                className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-[#F5EFE6]/60 transition-colors rounded-xl"
-                aria-expanded={thinkingOpen}
-              >
-                <div className="flex items-center gap-2">
-                  <Lightbulb className="w-4 h-4 text-[#C4785A]" />
-                  <span className="text-[#C4785A] text-xs font-bold uppercase tracking-widest">Currently Thinking About</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-slate-400 text-xs">{nowData.updatedDate}</span>
-                  <motion.div
-                    animate={{ rotate: thinkingOpen ? 180 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <ChevronDown className="w-4 h-4 text-[#C4785A]" />
-                  </motion.div>
-                </div>
-              </button>
-
-              <AnimatePresence initial={false}>
-                {thinkingOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-5 pb-5 pt-1 space-y-5">
-                      <p className="text-[0.9375rem] text-[#1e3a5f] font-medium leading-relaxed">
-                        {nowData.motivation}
-                      </p>
-
-                      <ul className="space-y-4">
-                        {nowData.interests.map((interest, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <span className="mt-[0.35rem] w-1.5 h-1.5 rounded-full bg-[#C4785A] shrink-0" />
-                            <div>
-                              <p className="text-[0.65rem] font-bold text-[#C4785A] uppercase tracking-widest mb-1">{interest.keyword}</p>
-                              <p className="text-sm text-slate-600 leading-relaxed">{interest.text}</p>
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <a
-                        href={nowData.ctaLink}
-                        className="inline-flex items-center gap-2 text-[#C4785A] text-sm font-semibold hover:text-[#1e3a5f] transition-colors"
-                      >
-                        {nowData.ctaText}
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </div>
           </div>
         </div>
