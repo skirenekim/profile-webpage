@@ -21,7 +21,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: 'Next-Gen ERP',
-    subtitle: 'Built by an AI Multi-Agent System',
+    subtitle: 'Built with an AI Multi-Agent System',
     period: 'April 2026 - Present',
     team: 'Solo Project',
     icon: Package,
