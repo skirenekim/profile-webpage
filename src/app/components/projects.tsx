@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Code, ExternalLink, Github, Gamepad2, Bot, Lock } from 'lucide-react';
+import { Code, ExternalLink, Github, Gamepad2, Package, Lock } from 'lucide-react';
 
 type Project = {
   title: string;
@@ -23,8 +23,8 @@ const projects: Project[] = [
     title: 'Next-Gen ERP',
     subtitle: 'Built by an AI Multi-Agent Organization',
     period: 'April 2026 - Present',
-    team: 'Solo Project (Multi-Agent Virtual Organization)',
-    icon: Bot,
+    team: 'Solo Project',
+    icon: Package,
     objective: [
       'Rebuild a next-generation ERP tailored to the packaging manufacturing domain on a modern architecture.',
       'Preserve industry-specific domain knowledge while replacing a legacy Windows desktop C/S system.',
@@ -68,14 +68,14 @@ const projects: Project[] = [
 function TextBlock({ content }: { content: string | string[] }) {
   if (Array.isArray(content)) {
     return (
-      <ul className="space-y-2">
+      <div className="space-y-1.5">
         {content.map((line, i) => (
-          <li key={i} className="text-slate-700 text-sm leading-relaxed flex items-start">
-            <span className="w-1.5 h-1.5 bg-[#6D94C5] rounded-full mt-[0.45rem] mr-2 flex-shrink-0" />
-            <span>{line}</span>
-          </li>
+          <p key={i} className="text-slate-700 text-sm leading-relaxed pl-4 -indent-4">
+            <span className="text-[#6D94C5] font-semibold mr-1.5">—</span>
+            {line}
+          </p>
         ))}
-      </ul>
+      </div>
     );
   }
   return <p className="text-slate-700 text-sm leading-relaxed">{content}</p>;
