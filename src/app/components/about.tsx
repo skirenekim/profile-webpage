@@ -58,14 +58,14 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
             <div className="border-l-2 border-[#6D94C5] pl-4">
               <p className="text-xs font-bold text-[#6D94C5] uppercase tracking-widest mb-2">Professional</p>
               <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
-                I am a Data Scientist who applies AI and machine learning to automate workflows, improve analytical systems, and support better operational decision-making. My work sits at the intersection of user behavior analytics, applied machine learning, agentic AI, and system improvement, with a focus on turning complex, fragmented processes into scalable and practical solutions. I am particularly interested in understanding user behavior and building analytical systems that translate machine learning into meaningful, measurable impact.
+                I am a Data Scientist who applies AI and machine learning to automate workflows, strengthen analytical systems, and support better operational decision-making. My focus is on user behavior analytics and agentic AI — turning complex, fragmented processes into practical solutions that translate ML into measurable impact.
               </p>
             </div>
 
             <div className="border-l-2 border-[#C49A6C] pl-4">
               <p className="text-xs font-bold text-[#C49A6C] uppercase tracking-widest mb-2">Perspective</p>
               <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
-                <span className="italic">Beyond my professional work,</span> I am deeply interested in how AI is transforming the way people live, think, and interact with the world. I care not only about what these rapidly evolving technologies can do, but also about how they shape human cognition, behavior, and society. This interest has long shaped my work, from applying deep learning to challenges such as cyberbullying, depression, and anti-cheat systems to now exploring the new possibilities that agentic AI may unlock. Ultimately, I want to better understand not only how AI transforms people and institutions, but also how we can guide that transformation responsibly by building AI systems that are safe, healthy, and socially beneficial.
+                <span className="italic">Beyond my professional work,</span> I am deeply interested in how AI is reshaping the way people live, think, and interact — and in how we can guide that transformation responsibly. This interest has long shaped my work, from applying deep learning to cyberbullying, depression, and anti-cheat systems to now exploring what agentic AI may unlock for building systems that are safe, healthy, and socially beneficial.
               </p>
             </div>
           </div>
