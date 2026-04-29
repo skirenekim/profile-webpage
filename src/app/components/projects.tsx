@@ -30,7 +30,6 @@ const projects: Project[] = [
       'Preserve industry-specific domain knowledge while replacing a legacy Windows desktop C/S system.',
     ],
     approach: [
-      'Re-express legacy domain knowledge on a modern foundation that separates product definition from rules, preserves historical transaction state, and treats exceptions as first-class signals.',
       'Scale a solo developer into a full cross-functional org via a Claude Code multi-agent system under a Staff → Manager → CEO approval pipeline.',
       'Run the platform on AWS + Kubernetes with a managed workflow engine and analytics read model to sustain end-to-end operations alone.',
     ],
