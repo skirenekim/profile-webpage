@@ -27,6 +27,18 @@ export const experienceData: Job[] = [
     accentBg: 'bg-[#6D94C5]',
     projects: [
       {
+        title: '[FC Online 4] Annual Service Review & Declining Segment Deep-Dive',
+        period: '2026.02 - 2026.03',
+        team: 'Team of 3',
+        problem: 'Executives and company-wide stakeholders lacked a consolidated view of 2025 service performance and a diagnostic read on user segments showing declines in early 2026.',
+        approach: 'Designed an executive reporting framework that consolidated full-year 2025 engagement, revenue, and in-game metrics, paired with a deep-dive behavioral analysis of a declining 2026 user segment.',
+        outcome: 'Delivered a director-level 2025 annual service review distributed company-wide and a 2026 segment diagnostic report, accelerating alignment on intervention priorities.',
+        contributions: [
+          'Consolidated 2025 annual engagement, revenue, and in-game metrics into a single executive service review distributed company-wide.',
+          'Conducted a deep-dive behavioral analysis on a declining 2026 user segment, identifying structural drivers and informing intervention priorities.',
+        ],
+      },
+      {
         title: '[FC Online 4] Agent-Based Monthly Reporting Automation',
         period: '2025.11 - Present',
         team: 'Individual Contributor',
