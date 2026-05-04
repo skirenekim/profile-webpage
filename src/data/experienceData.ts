@@ -41,7 +41,7 @@ export const experienceData: Job[] = [
       {
         title: '[FC Online 4] Churn Prediction & Proactive Intervention System',
         period: '2025.08 - Present',
-        team: 'Team of 2',
+        team: 'Individual Contributor',
         problem: 'User engagement decline and churn were addressed reactively, limiting proactive intervention.',
         approach: 'Identified early user disengagement signals from large-scale gameplay logs and built a behavior-based prediction framework.',
         outcome: 'Enabled proactive intervention strategies targeting at-risk users before churn occurs.',
@@ -52,7 +52,7 @@ export const experienceData: Job[] = [
       },
       {
         title: '[Platform] Analytics Platform Consolidation & Databricks Deployment',
-        period: '2025.04 - Present',
+        period: '2025.04 - 2025.11',
         team: 'Individual Contributor',
         problem: 'Fragmented analytics infrastructure across Jupyter, Snowflake, Airflow, and distributed data marts reduced efficiency and standardization.',
         approach: 'Migrated the entire analytics stack to a unified Databricks data platform, owning deployment end-to-end with Databricks Solutions Architects.',
@@ -64,7 +64,7 @@ export const experienceData: Job[] = [
       },
       {
         title: '[FC Online 4] KPI Change Index & Executive Decision Support',
-        period: '2024.12 - Present',
+        period: '2024.12 - 2026.04',
         team: 'Team of 2',
         problem: 'Inconsistent interpretation of monthly performance metrics among executives delayed data-driven decisions.',
         approach: 'Designed a KPI Change Index framework using effect-size analysis to distinguish structural behavior shifts from short-term fluctuations.',
