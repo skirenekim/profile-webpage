@@ -27,7 +27,7 @@ export const experienceData: Job[] = [
     accentBg: 'bg-[#6D94C5]',
     projects: [
       {
-        title: '[FC Online 4] Executive Retrospective & Segment Diagnostic',
+        title: '[FC Online 4] Executive Business Review & Segment Diagnostic',
         period: '2026.02 - 2026.03',
         team: 'Team of 3',
         problem: 'Executives and company-wide stakeholders lacked a consolidated view of 2025 service performance and a diagnostic read on user segments showing declines in early 2026.',
