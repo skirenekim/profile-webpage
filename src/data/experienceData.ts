@@ -31,11 +31,11 @@ export const experienceData: Job[] = [
         period: '2026.02 - 2026.03',
         team: 'Team of 3',
         problem: 'Executives and company-wide stakeholders lacked a consolidated view of 2025 service performance and a diagnostic read on user segments showing declines in early 2026.',
-        approach: 'Designed an executive reporting framework that consolidated full-year 2025 engagement, revenue, and in-game metrics, paired with a deep-dive behavioral analysis of a declining 2026 user segment.',
+        approach: 'Delivered two distinct executive reports — a 2025 service-wide retrospective and a 2026 behavioral diagnostic on a declining user segment — each scoped to a different leadership decision horizon.',
         outcome: 'Published a director-level 2025 executive retrospective and 2026 segment diagnostic report distributed company-wide, directly informing leadership decisions and strategic direction for the service.',
         contributions: [
-          'Consolidated 2025 annual engagement, revenue, and in-game metrics into a single executive service review distributed company-wide.',
-          'Conducted a deep-dive behavioral analysis on a declining 2026 user segment, identifying structural drivers and informing intervention priorities.',
+          '2025 Annual Service Review — Consolidated full-year engagement, revenue, and in-game metrics into a single executive-facing retrospective distributed company-wide.',
+          '2026 Segment Diagnostic — Conducted a deep-dive behavioral analysis on a declining user segment, identifying structural drivers and surfacing intervention priorities for leadership.',
         ],
       },
       {
