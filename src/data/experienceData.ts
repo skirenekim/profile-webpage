@@ -56,7 +56,7 @@ export const experienceData: Job[] = [
         ],
       },
       {
-        title: '[FC Online 4] Multi-Stage LLM Agent Reporting Platform',
+        title: '[FC Online 4] AI KPI Reporting & Prompt Management Platform',
         period: '2025.12 - Present',
         team: 'Individual Contributor',
         problem:
