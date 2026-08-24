@@ -35,7 +35,7 @@ const milestones = [
   // Dec 2024 row — two half-width cards rendered via the `pair` field on the first
   {
     icon: TrendingUp,
-    title: 'Data Scientist at Electronic Arts',
+    title: 'Senior Data Scientist at Electronic Arts',
     description: 'Joined EA to build advanced analytics and AI systems for FC Online 4',
     date: 'Dec 2024',
     location: null,

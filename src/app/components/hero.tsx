@@ -67,7 +67,7 @@ export function Hero() {
               className="mb-6"
             >
               <p className="text-base md:text-lg text-[#E8DFCA] mb-3 tracking-wide font-medium">
-                Data Scientist
+                Senior Data Scientist
               </p>
               <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                 {['Agentic AI', 'Applied ML', 'User Behavior Analytics'].map((kw) => (

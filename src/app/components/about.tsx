@@ -58,7 +58,7 @@ export function About({ onNavigate }: { onNavigate: (tab: string) => void }) {
             <div className="border-l-2 border-[#6D94C5] pl-4">
               <p className="text-xs font-bold text-[#6D94C5] uppercase tracking-widest mb-2">Professional</p>
               <p className="text-[0.9375rem] text-slate-600 leading-[1.9] tracking-[0.01em]">
-                I am a Data Scientist who applies AI and machine learning to automate workflows, strengthen analytical systems, and support better operational decision-making. My focus is on user behavior analytics and agentic AI — turning complex, fragmented processes into practical solutions that translate ML into measurable impact.
+                I am a Senior Data Scientist who applies AI and machine learning to automate workflows, strengthen analytical systems, and support better operational decision-making. My focus is on user behavior analytics and agentic AI — turning complex, fragmented processes into practical solutions that translate ML into measurable impact.
               </p>
             </div>
 

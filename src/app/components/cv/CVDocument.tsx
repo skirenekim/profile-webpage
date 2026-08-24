@@ -5,7 +5,7 @@ import { educationData, certifications } from '../../../data/educationData';
 
 const PROFILE = {
   name: 'Seong Kyung Kim',
-  title: 'Data Scientist',
+  title: 'Senior Data Scientist',
   subtitle: 'User Behavior Analytics · Agentic AI · Applied ML',
   email: 'keks1208@naver.com',
   linkedin: 'linkedin.com/in/skirene',

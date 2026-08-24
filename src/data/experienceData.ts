@@ -21,7 +21,7 @@ export interface Job {
 export const experienceData: Job[] = [
   {
     company: 'Electronic Arts',
-    role: 'Data Scientist',
+    role: 'Senior Data Scientist',
     period: 'December 2024 - Present',
     highlight: 'Awarded RSUs for outstanding annual performance (2025)',
     accentBg: 'bg-[#6D94C5]',
