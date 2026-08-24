@@ -27,7 +27,7 @@ export const experienceData: Job[] = [
     accentBg: 'bg-[#6D94C5]',
     projects: [
       {
-        title: '[FC Online 4] Service Health Scoring & AI Diagnostic System',
+        title: '[FC Online 4] Game Service Health Diagnostic System',
         period: '2026.07 - Present',
         team: 'Individual Contributor',
         problem:
