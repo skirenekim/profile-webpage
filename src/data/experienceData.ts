@@ -57,7 +57,7 @@ export const experienceData: Job[] = [
       },
       {
         title: '[FC Online 4] Agent-Based Monthly Reporting Automation',
-        period: '2025.11 - 2025.12',
+        period: '2025.11 - 2026.06',
         team: 'Individual Contributor',
         problem: 'Repetitive monthly reporting consumed significant analyst time and slowed decision-making.',
         approach: 'Built an LLM-driven agent workflow to automate monthly performance reporting end-to-end.',
@@ -110,7 +110,7 @@ export const experienceData: Job[] = [
       },
       {
         title: '[FC Online 4] KPI Change Index & Executive Decision Support',
-        period: '2024.12 - 2026.04',
+        period: '2024.12 - 2025.12',
         team: 'Team of 2',
         problem: 'Inconsistent interpretation of monthly performance metrics among executives delayed data-driven decisions.',
         approach: 'Designed a KPI Change Index framework using effect-size analysis to distinguish structural behavior shifts from short-term fluctuations.',
