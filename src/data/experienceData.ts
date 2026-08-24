@@ -86,7 +86,7 @@ export const experienceData: Job[] = [
       },
       {
         title: '[FC Online 4] Churn Prediction & Proactive Intervention System',
-        period: '2025.08 - Present',
+        period: '2025.08 - 2026.04',
         team: 'Individual Contributor',
         problem: 'User engagement decline and churn were addressed reactively, limiting proactive intervention.',
         approach: 'Identified early user disengagement signals from large-scale gameplay logs and built a behavior-based prediction framework.',
