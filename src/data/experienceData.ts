@@ -60,16 +60,16 @@ export const experienceData: Job[] = [
         period: '2025.12 - Present',
         team: 'Individual Contributor',
         problem:
-          'Generating consistent AI interpretation for 9 monthly KPI sections required a reliable pipeline that separated factual data grounding from deep narrative analysis.',
+          'Monthly AI reporting required both a reliable multi-stage LLM pipeline and a way for analysts to iteratively tune prompts — without engineering involvement each time interpretation logic needed to change.',
         approach:
-          'Built a two-stage LLM pipeline on Databricks Apps: Genie produces factual per-section summaries, and an MLflow-served agent synthesizes deep analysis — with a final agent pass aggregating all sections into an executive summary.',
+          'Built a two-stage LLM pipeline (Genie → MLflow agent) for 9 KPI sections with a final executive summary pass, paired with an in-browser prompt management UI featuring version history, live preview, and one-click deployment.',
         outcome:
-          'Delivered a 9-section AI reporting system across multiple countries, cutting dashboard load times from 30+ seconds to sub-second and enabling prompt iteration without engineering involvement.',
+          'Enabled analysts to own AI report quality end-to-end — iterating on prompts directly in the UI without code deployments — while delivering sub-second dashboard loads across multiple countries via a pre-computed Delta Lake cache.',
         contributions: [
+          'Implemented an in-browser prompt management UI with version history, live preview, and one-click deployment — enabling analysts to iterate on AI report prompts without engineering involvement.',
           'Designed a Genie → MLflow agent two-stage pipeline across 9 monthly report sections, with a final agent pass generating an executive summary with slogans and key points.',
           'Applied SMD-based 9-tier metric status classification across engagement, revenue, and game economy, standardizing interpretation for consistent AI analysis input.',
           'Built a cache-first FastAPI app on Databricks Apps backed by pre-computed Unity Catalog Delta tables, cutting dashboard load times from 30+ seconds to sub-second.',
-          'Implemented an in-browser prompt management UI with version history, live preview, and one-click deployment — enabling non-engineers to update AI report prompts without code changes.',
         ],
       },
       {
