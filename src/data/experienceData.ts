@@ -33,12 +33,12 @@ export const experienceData: Job[] = [
         problem:
           'Product directors needed a standardized monthly read on player engagement health but lacked a consistent framework for interpreting raw KPI tables without analyst support.',
         approach:
-          'Designed a 7-metric engagement scoring system (S/A/B/C/D/F composite grades) and integrated Claude Opus 4 to generate Korean-language diagnostic narratives, with all scoring logic computed deterministically before LLM prose generation.',
+          'Designed a 7-metric engagement scoring system (S/A/B/C/D/F composite grades) and wired a domain-specific LLM serving endpoint to generate Korean-language diagnostic narratives, with all scoring logic computed deterministically before prose generation.',
         outcome:
           'Replaced manual monthly engagement reviews with an automated health report — enabling product directors to self-serve standardized engagement diagnostics without analyst involvement.',
         contributions: [
           'Designed a 7-metric engagement health scoring framework with composite grading, mirroring the scoring logic identically in JS (frontend) and Python (batch pipeline).',
-          'Integrated Claude Opus 4 for AI-written diagnostic copy with number-grounding validation, ensuring LLM narratives cannot contradict pre-calculated scores.',
+          'Integrated an LLM serving endpoint for AI-written diagnostic copy with number-grounding validation, ensuring generated narratives cannot contradict pre-calculated scores.',
           'Built an interactive methodology chatbot grounded in an official knowledge base, enabling stakeholders to ask about scoring rationale and metric definitions in-app.',
           'Connected three Databricks Apps (KPI platform, economy dashboard, health chart) via resource bindings to consolidate engagement and economy signals into a single health view.',
         ],
