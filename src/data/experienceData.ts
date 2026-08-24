@@ -56,18 +56,6 @@ export const experienceData: Job[] = [
         ],
       },
       {
-        title: '[FC Online 4] Agent-Based Monthly Reporting Automation',
-        period: '2025.11 - 2026.06',
-        team: 'Individual Contributor',
-        problem: 'Repetitive monthly reporting consumed significant analyst time and slowed decision-making.',
-        approach: 'Built an LLM-driven agent workflow to automate monthly performance reporting end-to-end.',
-        outcome: 'Reduced recurring operational workload by ~7 person-days per month and shortened decision-making lead time.',
-        contributions: [
-          'Designed an end-to-end analytics pipeline that generates executive reports and refreshes key metrics without manual intervention.',
-          'Delivered a self-serve analytics application enabling product and business teams to independently explore key KPIs.',
-        ],
-      },
-      {
         title: '[FC Online 4] Multi-Stage LLM Agent Reporting Platform',
         period: '2025.12 - Present',
         team: 'Individual Contributor',
