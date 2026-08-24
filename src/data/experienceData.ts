@@ -57,7 +57,7 @@ export const experienceData: Job[] = [
       },
       {
         title: '[FC Online 4] Agent-Based Monthly Reporting Automation',
-        period: '2025.11 - Present',
+        period: '2025.11 - 2025.12',
         team: 'Individual Contributor',
         problem: 'Repetitive monthly reporting consumed significant analyst time and slowed decision-making.',
         approach: 'Built an LLM-driven agent workflow to automate monthly performance reporting end-to-end.',
