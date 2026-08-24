@@ -27,6 +27,23 @@ export const experienceData: Job[] = [
     accentBg: 'bg-[#6D94C5]',
     projects: [
       {
+        title: '[FC Online 4] Engagement Health Scoring & AI Diagnostic System',
+        period: '2026.07 - Present',
+        team: 'Individual Contributor',
+        problem:
+          'Product directors needed a standardized monthly read on player engagement health but lacked a consistent framework for interpreting raw KPI tables without analyst support.',
+        approach:
+          'Designed a 7-metric engagement health scoring system (S/A/B/C/D/F grading) and integrated Claude Opus 4.8 to generate structured Korean-language diagnostic narratives — strictly separating deterministic scoring logic from LLM prose to prevent hallucination.',
+        outcome:
+          'Replaced manual monthly engagement reviews with an automated, stakeholder-ready health report delivered through a Databricks App, with number-grounding validation ensuring LLM outputs remain factually consistent with pre-scored data.',
+        contributions: [
+          'Designed a 7-metric engagement health scoring framework with composite grading, mirroring scoring logic identically in JS (frontend) and Python (batch pipeline) for consistency.',
+          'Integrated Claude Opus 4.8 for AI-written diagnostic copy with number-grounding validation, ensuring LLM narratives cannot contradict pre-calculated scores.',
+          'Built an interactive methodology chatbot grounded in an official knowledge base, enabling stakeholders to ask questions about scoring rationale and metric definitions in-app.',
+          'Connected three Databricks Apps (KPI platform, economy dashboard, health chart) via resource bindings to consolidate engagement and economy signals into a single health view.',
+        ],
+      },
+      {
         title: '[FC Online 4] Executive Business Review & Segment Diagnostic',
         period: '2026.02 - 2026.03',
         team: 'Team of 3',
@@ -48,6 +65,23 @@ export const experienceData: Job[] = [
         contributions: [
           'Designed an end-to-end analytics pipeline that generates executive reports and refreshes key metrics without manual intervention.',
           'Delivered a self-serve analytics application enabling product and business teams to independently explore key KPIs.',
+        ],
+      },
+      {
+        title: '[FC Online 4] Multi-Stage LLM Agent Reporting Platform',
+        period: '2025.12 - Present',
+        team: 'Individual Contributor',
+        problem:
+          'Generating consistent, analytically grounded AI interpretation for 9 monthly KPI report sections required a reliable pipeline that separated factual grounding from deep analysis — and allowed non-engineers to iterate on prompts without code deployments.',
+        approach:
+          'Built a two-stage LLM agent pipeline on Databricks Apps: Genie handles factual KPI summarization per section, and an MLflow-served agent synthesizes deep analysis and an executive summary — all backed by a pre-computed Delta Lake cache for sub-second load times.',
+        outcome:
+          'Delivered a production-grade AI reporting system covering 9 KPI sections across multiple countries, with a UI-based prompt management layer enabling prompt versioning and live preview without engineering involvement.',
+        contributions: [
+          'Designed a two-stage LLM pipeline (Genie factual summary → MLflow agent deep analysis) across 9 monthly report sections, culminating in an AI-generated executive summary with slogans and key points.',
+          'Applied SMD-based 9-tier status classification to standardize metric interpretation across engagement, revenue, and game economy dimensions.',
+          'Built a cache-first FastAPI application on Databricks Apps backed by pre-computed Unity Catalog Delta tables, reducing dashboard load times from 30+ seconds to sub-second.',
+          'Implemented an in-browser prompt management UI with version history, live preview, and one-click deployment — enabling non-engineers to iterate on AI report prompts without code changes.',
         ],
       },
       {
