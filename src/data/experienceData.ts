@@ -33,13 +33,13 @@ export const experienceData: Job[] = [
         problem:
           'Product directors needed a standardized monthly read on player engagement health but lacked a consistent framework for interpreting raw KPI tables without analyst support.',
         approach:
-          'Designed a 7-metric engagement health scoring system (S/A/B/C/D/F grading) and integrated Claude Opus 4.8 to generate structured Korean-language diagnostic narratives — strictly separating deterministic scoring logic from LLM prose to prevent hallucination.',
+          'Designed a 7-metric engagement scoring system (S/A/B/C/D/F composite grades) and integrated Claude Opus 4 to generate Korean-language diagnostic narratives, with all scoring logic computed deterministically before LLM prose generation.',
         outcome:
-          'Replaced manual monthly engagement reviews with an automated, stakeholder-ready health report delivered through a Databricks App, with number-grounding validation ensuring LLM outputs remain factually consistent with pre-scored data.',
+          'Replaced manual monthly engagement reviews with an automated health report — enabling product directors to self-serve standardized engagement diagnostics without analyst involvement.',
         contributions: [
-          'Designed a 7-metric engagement health scoring framework with composite grading, mirroring scoring logic identically in JS (frontend) and Python (batch pipeline) for consistency.',
-          'Integrated Claude Opus 4.8 for AI-written diagnostic copy with number-grounding validation, ensuring LLM narratives cannot contradict pre-calculated scores.',
-          'Built an interactive methodology chatbot grounded in an official knowledge base, enabling stakeholders to ask questions about scoring rationale and metric definitions in-app.',
+          'Designed a 7-metric engagement health scoring framework with composite grading, mirroring the scoring logic identically in JS (frontend) and Python (batch pipeline).',
+          'Integrated Claude Opus 4 for AI-written diagnostic copy with number-grounding validation, ensuring LLM narratives cannot contradict pre-calculated scores.',
+          'Built an interactive methodology chatbot grounded in an official knowledge base, enabling stakeholders to ask about scoring rationale and metric definitions in-app.',
           'Connected three Databricks Apps (KPI platform, economy dashboard, health chart) via resource bindings to consolidate engagement and economy signals into a single health view.',
         ],
       },
@@ -72,16 +72,16 @@ export const experienceData: Job[] = [
         period: '2025.12 - Present',
         team: 'Individual Contributor',
         problem:
-          'Generating consistent, analytically grounded AI interpretation for 9 monthly KPI report sections required a reliable pipeline that separated factual grounding from deep analysis — and allowed non-engineers to iterate on prompts without code deployments.',
+          'Generating consistent AI interpretation for 9 monthly KPI sections required a reliable pipeline that separated factual data grounding from deep narrative analysis.',
         approach:
-          'Built a two-stage LLM agent pipeline on Databricks Apps: Genie handles factual KPI summarization per section, and an MLflow-served agent synthesizes deep analysis and an executive summary — all backed by a pre-computed Delta Lake cache for sub-second load times.',
+          'Built a two-stage LLM pipeline on Databricks Apps: Genie produces factual per-section summaries, and an MLflow-served agent synthesizes deep analysis — with a final agent pass aggregating all sections into an executive summary.',
         outcome:
-          'Delivered a production-grade AI reporting system covering 9 KPI sections across multiple countries, with a UI-based prompt management layer enabling prompt versioning and live preview without engineering involvement.',
+          'Delivered a 9-section AI reporting system across multiple countries, cutting dashboard load times from 30+ seconds to sub-second and enabling prompt iteration without engineering involvement.',
         contributions: [
-          'Designed a two-stage LLM pipeline (Genie factual summary → MLflow agent deep analysis) across 9 monthly report sections, culminating in an AI-generated executive summary with slogans and key points.',
-          'Applied SMD-based 9-tier status classification to standardize metric interpretation across engagement, revenue, and game economy dimensions.',
-          'Built a cache-first FastAPI application on Databricks Apps backed by pre-computed Unity Catalog Delta tables, reducing dashboard load times from 30+ seconds to sub-second.',
-          'Implemented an in-browser prompt management UI with version history, live preview, and one-click deployment — enabling non-engineers to iterate on AI report prompts without code changes.',
+          'Designed a Genie → MLflow agent two-stage pipeline across 9 monthly report sections, with a final agent pass generating an executive summary with slogans and key points.',
+          'Applied SMD-based 9-tier metric status classification across engagement, revenue, and game economy, standardizing interpretation for consistent AI analysis input.',
+          'Built a cache-first FastAPI app on Databricks Apps backed by pre-computed Unity Catalog Delta tables, cutting dashboard load times from 30+ seconds to sub-second.',
+          'Implemented an in-browser prompt management UI with version history, live preview, and one-click deployment — enabling non-engineers to update AI report prompts without code changes.',
         ],
       },
       {
