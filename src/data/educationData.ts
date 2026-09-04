@@ -57,7 +57,7 @@ export const certifications: Certification[] = [
   {
     title: 'TOEFL iBT',
     issuer: 'Score: 114 / 120',
-    date: '2019.09',
+    date: '2019.04',
     iconBg: 'bg-[#C49A6C]',
   },
 ];
