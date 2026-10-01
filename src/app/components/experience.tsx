@@ -72,7 +72,7 @@ function ProjectRow({ project }: { project: Project }) {
 
 export function Experience() {
   return (
-    <Section id="experience" title="Experience">
+    <Section id="experience" tone="mist" title="Experience">
       <div className="space-y-16">
         {experienceData.map((job) => (
           <Row
@@ -83,13 +83,13 @@ export function Experience() {
                 <img
                   src={logoMap[job.company]}
                   alt=""
-                  className="h-11 w-11 rounded-md border border-line bg-white object-contain p-1"
+                  className="h-11 w-11 rounded-md border border-tone-line bg-white object-contain p-1"
                 />
                 <h3 className="mt-4 text-xl text-ink">{job.company}</h3>
                 <p className="mt-0.5 text-ink-soft">{job.role}</p>
                 <p className="mt-1 text-sm text-ink-muted">{job.period}</p>
                 {job.highlight && (
-                  <p className="mt-3 flex items-start gap-1.5 text-sm text-amber">
+                  <p className="mt-3 flex items-start gap-1.5 text-sm text-honor">
                     <Award className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                     <span>{job.highlight}</span>
                   </p>
@@ -97,7 +97,7 @@ export function Experience() {
               </>
             }
           >
-            <ul className="divide-y divide-line border-y border-line">
+            <ul className="divide-y divide-tone-line border-y border-tone-line">
               {job.projects.map((project) => (
                 <ProjectRow key={project.title} project={project} />
               ))}

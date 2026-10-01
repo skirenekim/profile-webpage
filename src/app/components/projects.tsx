@@ -68,8 +68,8 @@ function TextBlock({ content }: { content: string | string[] }) {
 
 export function Projects() {
   return (
-    <Section id="projects" title="Personal Projects" subtitle="Independent work and creative initiatives">
-      <div className="divide-y divide-line">
+    <Section id="projects" tone="cream" title="Personal Projects" subtitle="Independent work and creative initiatives">
+      <div className="divide-y divide-tone-line">
         {projects.map((project) => (
           <article key={project.title} className="py-12 first:pt-0 last:pb-0">
             <Row

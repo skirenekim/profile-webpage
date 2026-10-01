@@ -35,19 +35,18 @@ Changes are automatically committed and pushed to GitHub when a session ends (St
 - No "Co-Authored-By: Claude" lines in commits
 - Concise commit messages describing what changed, not how
 
-## Design system (muted editorial)
-Tokens live in `src/styles/theme.css` (`@theme`) and are used as Tailwind utilities (`text-ink`, `bg-paper`, `border-line`, …). Do not reintroduce raw hex values or Tailwind `slate-*` colors in components.
+## Design system (soft pastel + aurora backdrop)
+Tokens live in `src/styles/theme.css` (`@theme`) and are used as Tailwind utilities. Do not reintroduce raw hex values, Tailwind `slate-*` colors, or any navy/dark blocks — the user explicitly rejected navy.
 
-- `paper` `#F5EFE6` page bg · `paper-2` `#EDE6D9` · `line` `#DFD6C5` hairlines
-- `ink` `#2C3A48` headings · `ink-soft` `#566270` body · `ink-muted` `#646C76` metadata/labels
-- `accent` `#4C6A8B` — the only interactive/emphasis hue (links, upcoming tag, focus ring)
-- `hero` `#34475C` hero background
-- `amber` `#826639` — reserved for awards/honors only · `sage` `#5A6F5B` — reserved for the CV download button only
-- All text tokens pass WCAG AA (≥4.5:1) on `paper`; keep it that way when adjusting.
+- Base: `cream` `#FBF8F3` · text `ink` `#36342F` / `ink-soft` `#5B5953` / `ink-muted` `#67645C` · neutral hairline `line`
+- `honor` `#6E5C34` — reserved for awards/honors only
+- Section tones (class `tone-*` on each `<Section>`): `sand` · `mist` sage · `lilac` · `cream` neutral (`blush`/`aqua` exist but are unused — keep to 3 hues to avoid a rainbow). Inside a section use `bg-tone-bg`, `border-tone-line`, `text-tone-accent`; they resolve to that section's hue. Current mapping: About sand · Experience mist · Projects cream · Updates lilac · Education sand · Contact cream. Labels stay neutral (`ink-muted`); the accent is only for links, dashes, the upcoming tag and the CV button.
+- Every accent passes WCAG AA (≥4.5:1) on its own tint; verify with a contrast check when changing values.
+- "Shader" feel comes from the fixed `.aurora` layer (pastel radial-gradient mesh + grain overlay; 48s drift only on desktop pointer devices) behind translucent section bands (`bg-tone-bg/60` with a 1px white inset highlight) and a soft white radial highlight under the hero. Keep it the only animated element besides the one-time section fade.
 
-Fonts: Fraunces (h1/h2, serif) + Inter (body) + Noto Sans KR fallback, loaded via `<link>` in `index.html`.
+Fonts: Fraunces (h1/h2, serif) + DM Sans (body) + Noto Sans KR fallback, loaded via `<link>` in `index.html`.
 
-Layout rules: single-page scroll with sticky anchor nav (`App.tsx`); every section uses the shared primitives in `src/app/components/primitives.tsx` (`Section`, `Row` with a 220px left column, `Label`, `Chip`, `Meta`, `DashList`). No nested cards, no per-item accent colors, one section-level fade only.
+Layout rules: single-page scroll with sticky anchor nav (`App.tsx`); every section uses the shared primitives in `src/app/components/primitives.tsx` (`Section` with `tone`, `Row` with a 220px left column, `Label`, `Chip`, `Meta`, `DashList`, `glassPill`). No nested cards, no icon-in-colored-box patterns, no hover scale effects.
 
 ## Deployment
 Push to `main` → GitHub Actions builds and deploys to `gh-pages` branch automatically.

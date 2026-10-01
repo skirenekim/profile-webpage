@@ -1,27 +1,37 @@
 import type { ReactNode } from 'react';
 
+export type Tone = 'cream' | 'blush' | 'sand' | 'mist' | 'aqua' | 'lilac';
+
 /** Single, section-level entrance: one quiet CSS fade-up on load (disabled under prefers-reduced-motion). */
 export function Reveal({ children, className = '' }: { children: ReactNode; className?: string }) {
   return <div className={`fade-up ${className}`}>{children}</div>;
 }
 
-/** Page section with the one shared heading style (left-aligned serif h2). */
+/**
+ * Full-bleed section band. The tone sets the translucent pastel background and the accent
+ * that Label / links / hairlines inside it resolve to. The aurora backdrop shows through.
+ */
 export function Section({
   id,
+  tone,
   title,
   subtitle,
   children,
 }: {
   id: string;
+  tone: Tone;
   title: string;
   subtitle?: string;
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="scroll-mt-20 border-t border-line py-16 first:border-t-0 md:py-20">
-      <Reveal>
+    <section
+      id={id}
+      className={`tone-${tone} scroll-mt-16 bg-tone-bg/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)]`}
+    >
+      <Reveal className="mx-auto max-w-5xl px-6 py-16 md:py-20">
         <header className="mb-10 md:mb-12">
-          <h2 className="text-3xl md:text-[2.125rem] text-ink">{title}</h2>
+          <h2 className="text-3xl text-ink md:text-[2.125rem]">{title}</h2>
           {subtitle && <p className="mt-2 text-ink-soft">{subtitle}</p>}
         </header>
         {children}
@@ -30,7 +40,7 @@ export function Section({
   );
 }
 
-/** Small uppercase eyebrow label — identical everywhere. */
+/** Small uppercase eyebrow label — neutral and identical everywhere; the accent is kept for links and actions. */
 export function Label({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
     <p className={`text-xs font-semibold uppercase tracking-widest text-ink-muted ${className}`}>
@@ -49,10 +59,10 @@ export function Block({ label, children }: { label: string; children: ReactNode 
   );
 }
 
-/** The one chip style: hairline outline, no fill. */
+/** The one chip style: frosted white pill on the tinted band. */
 export function Chip({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-block rounded-full border border-line px-3 py-1 text-xs font-medium text-ink-soft">
+    <span className="inline-block rounded-full border border-white/70 bg-white/55 px-3 py-1 text-xs font-medium text-ink-soft">
       {children}
     </span>
   );
@@ -79,7 +89,7 @@ export function DashList({ items }: { items: string[] }) {
     <ul className="space-y-1.5">
       {items.map((item, i) => (
         <li key={i} className="flex text-sm leading-relaxed text-ink-soft">
-          <span className="mr-2.5 shrink-0 text-ink-muted">–</span>
+          <span className="mr-2.5 shrink-0 text-tone-accent">–</span>
           <span>{item}</span>
         </li>
       ))}
@@ -112,5 +122,9 @@ export function Row({
   );
 }
 
+/** Frosted glass pill used for primary links in the hero. */
+export const glassPill =
+  'inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/55 px-4 py-2 text-sm font-medium text-ink-soft backdrop-blur-sm transition-colors hover:bg-white/85 hover:text-ink';
+
 export const textLink =
-  'text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink/40';
+  'text-tone-accent underline decoration-tone-accent/40 underline-offset-4 transition-colors hover:text-ink hover:decoration-ink/40';

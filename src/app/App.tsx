@@ -69,19 +69,18 @@ export default function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-paper">
+      <div className="relative min-h-screen">
+        <div className="aurora" aria-hidden="true" />
         <Hero />
 
         <nav
           aria-label="Sections"
-          className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-md"
+          className="sticky top-0 z-40 border-b border-white/60 bg-cream/70 backdrop-blur-md"
         >
           <div className="mx-auto flex max-w-5xl items-center gap-6 px-6">
-            <a
-              href="#top"
-              className="hidden shrink-0 font-serif text-base font-medium text-ink md:block"
-            >
-              Seong Kyung Kim
+            <a href="#top" className="shrink-0 font-serif text-base font-medium text-ink" aria-label="Back to top">
+              <span className="md:hidden">SK</span>
+              <span className="hidden md:inline">Seong Kyung Kim</span>
             </a>
             <ul
               ref={navRef}
@@ -112,7 +111,7 @@ export default function App() {
           </div>
         </nav>
 
-        <main className="mx-auto max-w-5xl px-6">
+        <main>
           <About />
           <Experience />
           <Projects />
@@ -121,7 +120,7 @@ export default function App() {
           <Contact />
         </main>
 
-        <footer className="border-t border-line">
+        <footer className="bg-cream/80">
           <div className="mx-auto max-w-5xl px-6 py-8 text-xs text-ink-muted">
             © {new Date().getFullYear()} Seong Kyung Kim
           </div>

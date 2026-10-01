@@ -13,8 +13,8 @@ const logoMap: Record<string, string> = {
 
 export function Education() {
   return (
-    <Section id="education" title="Education">
-      <ul className="divide-y divide-line border-y border-line">
+    <Section id="education" tone="sand" title="Education">
+      <ul className="divide-y divide-tone-line border-y border-tone-line">
         {educationData.map((edu) => (
           <li key={edu.institution} className="py-6">
             <Row left={<Meta items={[edu.period, edu.location]} />}>
@@ -22,7 +22,7 @@ export function Education() {
                 <img
                   src={logoMap[edu.institution]}
                   alt=""
-                  className="h-10 w-10 shrink-0 rounded-md border border-line bg-white object-contain p-1"
+                  className="h-10 w-10 shrink-0 rounded-md border border-tone-line bg-white object-contain p-1"
                 />
                 <div className="min-w-0">
                   <h3 className="text-xl text-ink">{edu.institution}</h3>
@@ -30,7 +30,7 @@ export function Education() {
                     {edu.degree} in {edu.field}
                   </p>
                   {edu.honor && (
-                    <p className="mt-2 flex items-center gap-1.5 text-sm text-amber">
+                    <p className="mt-2 flex items-center gap-1.5 text-sm text-honor">
                       <Award className="h-3.5 w-3.5" aria-hidden="true" />
                       {edu.honor}
                     </p>
@@ -45,7 +45,7 @@ export function Education() {
 
       <div className="mt-14">
         <Label className="mb-3">Additional qualifications</Label>
-        <ul className="divide-y divide-line border-y border-line">
+        <ul className="divide-y divide-tone-line border-y border-tone-line">
           {certifications.map((cert) => (
             <li key={cert.title} className="py-4">
               <Row left={<Meta items={[cert.date]} />}>

@@ -23,7 +23,7 @@ export function Contact() {
   };
 
   return (
-    <Section id="contact" title="Contact">
+    <Section id="contact" tone="cream" title="Contact">
       <Row
         left={
           <p className="leading-relaxed text-ink-soft">
@@ -35,13 +35,13 @@ export function Contact() {
           type="button"
           onClick={handleDownload}
           disabled={isGenerating}
-          className="inline-flex items-center gap-2 rounded-lg bg-sage px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-ink disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex items-center gap-2 rounded-lg bg-tone-accent px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-ink disabled:cursor-wait disabled:opacity-70"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
           {isGenerating ? 'Generating PDF…' : 'Download CV (PDF)'}
         </button>
 
-        <dl className="mt-10 divide-y divide-line border-y border-line">
+        <dl className="mt-10 divide-y divide-tone-line border-y border-tone-line">
           {links.map((l) => (
             <div key={l.label} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-3 text-sm">
               <dt className="text-ink-muted">{l.label}</dt>

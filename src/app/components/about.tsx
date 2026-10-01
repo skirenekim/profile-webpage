@@ -28,7 +28,7 @@ const glance = [
 
 export function About() {
   return (
-    <Section id="about" title="About">
+    <Section id="about" tone="sand" title="About">
       <Row
         sticky
         leftLastOnMobile
@@ -36,11 +36,11 @@ export function About() {
         <aside className="space-y-8">
           <div>
             <Label className="mb-3">At a glance</Label>
-            <dl className="divide-y divide-line border-y border-line text-sm">
+            <dl className="divide-y divide-tone-line border-y border-tone-line text-sm">
               {glance.map(([term, value]) => (
-                <div key={term} className="flex justify-between gap-4 py-2.5">
-                  <dt className="text-ink-muted">{term}</dt>
-                  <dd className="text-right text-ink">{value}</dd>
+                <div key={term} className="py-2.5">
+                <dt className="text-xs text-ink-muted">{term}</dt>
+                <dd className="mt-0.5 text-ink">{value}</dd>
                 </div>
               ))}
             </dl>

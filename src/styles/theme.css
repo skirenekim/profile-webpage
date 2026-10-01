@@ -1,62 +1,34 @@
 /*
- * Design tokens — muted editorial palette.
- * paper  : page background (warm cream)
- * ink    : text scale (dark → muted)
- * line   : hairline dividers
- * accent : the ONLY interactive / emphasis hue (dusty blue)
- * amber  : reserved for awards and honors
- * sage   : reserved for the CV download action
+ * Design tokens — soft pastel, "shader" backdrop.
+ *
+ * cream       : neutral page base (nav, footer)
+ * ink / -soft / -muted : warm charcoal text scale
+ * line        : neutral hairline
+ * honor       : reserved for awards and honors
+ *
+ * Section tones: each <section> carries a .tone-* class that sets --tone-bg / --tone-line /
+ * --tone-accent. The tone-* color utilities below resolve to whichever tone the section uses,
+ * so a component written once (Label, link, hairline) picks up its section's hue automatically.
+ * Every accent passes WCAG AA (≥4.5:1) on its own tint.
  */
 @theme {
-  --color-paper: #F5EFE6;
-  --color-paper-2: #EDE6D9;
-  --color-line: #DFD6C5;
+  --color-cream: #FBF8F3;
+  --color-ink: #36342F;
+  --color-ink-soft: #5B5953;
+  --color-ink-muted: #67645C;
+  --color-line: #E7E1D6;
+  --color-honor: #6E5C34;
 
-  --color-ink: #2C3A48;
-  --color-ink-soft: #566270;
-  --color-ink-muted: #646C76;
-
-  --color-accent: #4C6A8B;
-  --color-accent-soft: #DCE3EA;
-  --color-hero: #34475C;
-
-  --color-amber: #826639;
-  --color-sage: #5A6F5B;
-
-  --font-sans: 'Inter', 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'DM Sans', 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Fraunces', 'Noto Sans KR', Georgia, serif;
 }
 
-/* shadcn/ui variables, mapped onto the palette above so ui/* components stay coherent. */
-:root {
-  --font-size: 16px;
-  --background: #F5EFE6;
-  --foreground: #2C3A48;
-  --card: #ffffff;
-  --card-foreground: #2C3A48;
-  --popover: #ffffff;
-  --popover-foreground: #2C3A48;
-  --primary: #4C6A8B;
-  --primary-foreground: #ffffff;
-  --secondary: #EDE6D9;
-  --secondary-foreground: #2C3A48;
-  --muted: #EDE6D9;
-  --muted-foreground: #646C76;
-  --accent: #DCE3EA;
-  --accent-foreground: #34475C;
-  --destructive: #b3443f;
-  --destructive-foreground: #ffffff;
-  --border: #DFD6C5;
-  --input: transparent;
-  --input-background: #F5EFE6;
-  --switch-background: #DCE3EA;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --ring: #4C6A8B;
-  --radius: 0.5rem;
-}
-
 @theme inline {
+  --color-tone-bg: var(--tone-bg);
+  --color-tone-line: var(--tone-line);
+  --color-tone-accent: var(--tone-accent);
+
+  /* shadcn/ui mapping so ui/* components stay coherent */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -82,6 +54,46 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+:root {
+  /* default tone = neutral cream */
+  --tone-bg: #FBF8F3;
+  --tone-line: #E7E1D6;
+  --tone-accent: #6A665D;
+
+  --font-size: 16px;
+  --background: #FBF8F3;
+  --foreground: #36342F;
+  --card: #ffffff;
+  --card-foreground: #36342F;
+  --popover: #ffffff;
+  --popover-foreground: #36342F;
+  --primary: #4B6E4F;
+  --primary-foreground: #ffffff;
+  --secondary: #EDF2EB;
+  --secondary-foreground: #36342F;
+  --muted: #F1ECE2;
+  --muted-foreground: #67645C;
+  --accent: #EFEDF5;
+  --accent-foreground: #36342F;
+  --destructive: #a8504c;
+  --destructive-foreground: #ffffff;
+  --border: #E7E1D6;
+  --input: transparent;
+  --input-background: #FBF8F3;
+  --switch-background: #D6E0D1;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #4B6E4F;
+  --radius: 0.75rem;
+}
+
+.tone-cream { --tone-bg: #FBF8F3; --tone-line: #E7E1D6; --tone-accent: #6A665D; }
+.tone-blush { --tone-bg: #F5ECE8; --tone-line: #E7D5CE; --tone-accent: #8F5553; }
+.tone-sand  { --tone-bg: #F6F0E3; --tone-line: #E6DCC6; --tone-accent: #7A673D; }
+.tone-mist  { --tone-bg: #EDF2EB; --tone-line: #D6E0D1; --tone-accent: #4B6E4F; }
+.tone-aqua  { --tone-bg: #E9F1F1; --tone-line: #CFDFDF; --tone-accent: #3C6D6E; }
+.tone-lilac { --tone-bg: #EFEDF5; --tone-line: #DAD6E7; --tone-accent: #625B86; }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -92,20 +104,14 @@
     scroll-behavior: smooth;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--tone-accent);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   body {
-    @apply bg-paper text-ink;
+    @apply bg-cream text-ink;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -116,8 +122,8 @@
   h2 {
     font-family: var(--font-serif);
     font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
   }
 
   h3,
@@ -138,6 +144,58 @@
     line-height: 1.5;
   }
 
+  /* ---------- Aurora backdrop: fixed pastel mesh that drifts very slowly ---------- */
+  .aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: #FBF8F3;
+    pointer-events: none;
+    isolation: isolate;
+    transform: translateZ(0);
+  }
+
+  .aurora::before {
+    content: '';
+    position: absolute;
+    inset: -12%;
+    background:
+      radial-gradient(42% 36% at 22% 18%, rgba(176, 203, 178, 0.85), transparent 72%),
+      radial-gradient(36% 32% at 80% 12%, rgba(232, 196, 190, 0.8), transparent 72%),
+      radial-gradient(46% 40% at 70% 56%, rgba(205, 199, 229, 0.7), transparent 72%),
+      radial-gradient(40% 36% at 12% 78%, rgba(236, 222, 190, 0.75), transparent 72%),
+      radial-gradient(34% 30% at 52% 92%, rgba(190, 217, 216, 0.7), transparent 72%);
+  }
+
+  /* Drift only where it is cheap and perceptible: pointer devices at desktop widths. */
+  @media (hover: hover) and (min-width: 768px) {
+    .aurora::before {
+      will-change: transform;
+      animation: aurora-drift 48s ease-in-out infinite alternate;
+    }
+  }
+
+  /* fine grain so the gradient reads as a rendered surface, not a flat fill */
+  .aurora::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.28;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.33 0 0 0 0 0.3 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-size: 160px 160px;
+  }
+
+  @keyframes aurora-drift {
+    from {
+      transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    }
+    to {
+      transform: translate3d(-2.5%, 2%, 0) rotate(4deg) scale(1.04);
+    }
+  }
+
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -154,7 +212,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .fade-up {
+    html {
+      scroll-behavior: auto;
+    }
+    .fade-up,
+    .aurora::before {
       animation: none;
     }
   }

@@ -42,15 +42,15 @@ const milestones: Milestone[] = [
 
 export function Updates() {
   return (
-    <Section id="updates" title="Updates">
-      <ul className="divide-y divide-line border-y border-line">
+    <Section id="updates" tone="lilac" title="Updates">
+      <ul className="divide-y divide-tone-line border-y border-tone-line">
         {milestones.map((m) => (
           <li key={m.title} className="py-6">
             <Row left={<Meta items={[m.date, m.location]} />}>
               {m.tag && (
-                <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-accent">{m.tag}</p>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-tone-accent">{m.tag}</p>
               )}
-              <h4 className="text-base font-medium text-ink">{m.title}</h4>
+              <h3 className="text-base font-medium text-ink">{m.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-ink-soft">{m.description}</p>
               {m.link && (
                 <a
