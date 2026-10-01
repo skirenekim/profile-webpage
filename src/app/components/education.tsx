@@ -1,9 +1,9 @@
-import { motion } from 'motion/react';
-import { Award, MapPin } from 'lucide-react';
+import { Award } from 'lucide-react';
 import georgiaLogo from '../../../img/georgia_institute_of_technology_logo.jpeg';
 import lseLogo from '../../../img/london_school_of_economics_logo.jpeg';
 import cauLogo from '../../../img/chung_ang_university_logo.jpeg';
 import { educationData, certifications } from '../../data/educationData';
+import { Section, Row, Meta, Label } from './primitives';
 
 const logoMap: Record<string, string> = {
   'Georgia Institute of Technology': georgiaLogo,
@@ -13,96 +13,49 @@ const logoMap: Record<string, string> = {
 
 export function Education() {
   return (
-    <div className="space-y-8">
-      {/* Education Cards */}
-      <div className="space-y-4">
-        {educationData.map((edu, index) => (
-          <motion.div
-            key={edu.institution}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            whileHover={{ scale: 1.02, y: -4 }}
-            className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-[#E8DFCA]"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-14 h-14 rounded-xl overflow-hidden border border-[#E8DFCA] shadow-sm flex-shrink-0 bg-white flex items-center justify-center">
-                <img src={logoMap[edu.institution]} alt={edu.institution} className="w-full h-full object-contain p-1" />
-              </div>
-
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-slate-900 mb-1">
-                  {edu.institution}
-                </h3>
-
-                <p className="text-lg text-slate-700 mb-2">
-                  {edu.degree} in {edu.field}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="px-3 py-1 bg-[#E8DFCA]/70 text-slate-600 rounded-lg text-sm font-medium">
-                    {edu.period}
-                  </span>
-                  <span className="flex items-center gap-1 px-3 py-1 bg-[#CBDCEB]/40 text-[#3d6a9e] rounded-lg text-sm font-medium">
-                    <MapPin className="w-3 h-3" />
-                    {edu.location}
-                  </span>
+    <Section id="education" title="Education">
+      <ul className="divide-y divide-line border-y border-line">
+        {educationData.map((edu) => (
+          <li key={edu.institution} className="py-6">
+            <Row left={<Meta items={[edu.period, edu.location]} />}>
+              <div className="flex gap-4">
+                <img
+                  src={logoMap[edu.institution]}
+                  alt=""
+                  className="h-10 w-10 shrink-0 rounded-md border border-line bg-white object-contain p-1"
+                />
+                <div className="min-w-0">
+                  <h3 className="text-xl text-ink">{edu.institution}</h3>
+                  <p className="mt-0.5 text-ink-soft">
+                    {edu.degree} in {edu.field}
+                  </p>
+                  {edu.honor && (
+                    <p className="mt-2 flex items-center gap-1.5 text-sm text-amber">
+                      <Award className="h-3.5 w-3.5" aria-hidden="true" />
+                      {edu.honor}
+                    </p>
+                  )}
+                  {edu.note && <p className="mt-2 text-sm text-ink-muted">{edu.note}</p>}
                 </div>
-
-                {edu.honor && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#C49A6C]/15 text-[#8a5e2a] border border-[#C49A6C]/40 rounded-full text-xs font-semibold mb-2">
-                    <Award className="w-3 h-3" />
-                    {edu.honor}
-                  </span>
-                )}
-                {edu.note && (
-                  <div className="flex items-start gap-2 p-3 bg-[#CBDCEB]/25 rounded-lg border border-[#CBDCEB]">
-                    <Award className="w-4 h-4 text-[#6D94C5] mt-0.5 flex-shrink-0" />
-                    <p className="text-sm text-[#3d6a9e] font-medium">{edu.note}</p>
-                  </div>
-                )}
               </div>
-            </div>
-          </motion.div>
+            </Row>
+          </li>
         ))}
-      </div>
+      </ul>
 
-      {/* Certifications */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-      >
-        <h3 className="text-2xl font-bold text-slate-900 mb-4">
-          Additional Qualifications
-        </h3>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          {certifications.map((cert, index) => (
-            <motion.div
-              key={cert.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 + index * 0.1 }}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-all border border-[#E8DFCA]"
-            >
-              <div className="flex items-start gap-3">
-                <div className={`w-10 h-10 ${cert.iconBg} rounded-lg flex items-center justify-center flex-shrink-0 shadow-sm`}>
-                  <Award className="w-5 h-5 text-white" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-slate-900 mb-1 leading-tight">
-                    {cert.title}
-                  </h4>
-                  <p className="text-sm text-slate-600 mb-2">{cert.issuer}</p>
-                  <span className="text-xs text-slate-500 font-medium">{cert.date}</span>
-                </div>
-              </div>
-            </motion.div>
+      <div className="mt-14">
+        <Label className="mb-3">Additional qualifications</Label>
+        <ul className="divide-y divide-line border-y border-line">
+          {certifications.map((cert) => (
+            <li key={cert.title} className="py-4">
+              <Row left={<Meta items={[cert.date]} />}>
+                <h4 className="text-base font-medium text-ink">{cert.title}</h4>
+                <p className="mt-0.5 text-sm text-ink-soft">{cert.issuer}</p>
+              </Row>
+            </li>
           ))}
-        </div>
-      </motion.div>
-    </div>
+        </ul>
+      </div>
+    </Section>
   );
 }

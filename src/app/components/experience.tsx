@@ -1,146 +1,110 @@
-import { motion } from 'motion/react';
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, Calendar, Users } from 'lucide-react';
+import { useId, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { ChevronDown, Award } from 'lucide-react';
 import eaLogo from '../../../img/electronic_arts_logo.jpeg';
 import kraftonLogo from '../../../img/krafton_inc_logo.jpeg';
-import { experienceData, type Job, type Project } from '../../data/experienceData';
+import { experienceData, type Project } from '../../data/experienceData';
+import { Section, Row, Block, Meta, DashList } from './primitives';
 
 const logoMap: Record<string, string> = {
   'Electronic Arts': eaLogo,
   'PUBG, Krafton': kraftonLogo,
 };
 
-const sectionHeading = 'font-semibold text-slate-900 mb-1 text-sm';
-const sectionBody = 'text-slate-600 text-sm leading-relaxed';
-
-function ProjectCard({ project, index, accentBg }: { project: Project; index: number; accentBg: string }) {
-  const [isExpanded, setIsExpanded] = useState(false);
+function ProjectRow({ project }: { project: Project }) {
+  const [open, setOpen] = useState(false);
+  const panelId = useId();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05, duration: 0.3 }}
-      className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all mb-3 border border-[#E8DFCA] overflow-hidden"
-    >
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full p-5 text-left flex items-start justify-between gap-4 hover:bg-[#F5EFE6] transition-colors"
-      >
-        <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-slate-900 mb-2 leading-tight">
-            {project.title}
-          </h4>
-          <div className="flex flex-wrap gap-2 text-xs">
-            <span className="flex items-center gap-1 px-2 py-1 bg-[#E8DFCA]/60 text-slate-600 rounded-md">
-              <Calendar className="w-3 h-3" />
-              {project.period}
-            </span>
-            <span className="flex items-center gap-1 px-2 py-1 bg-[#CBDCEB]/50 text-[#3d6a9e] rounded-md">
-              <Users className="w-3 h-3" />
-              {project.team}
-            </span>
-          </div>
-        </div>
-        <div className={`flex-shrink-0 mt-1 w-8 h-8 rounded-lg ${accentBg} flex items-center justify-center`}>
-          {isExpanded ? (
-            <ChevronUp className="w-4 h-4 text-white" />
-          ) : (
-            <ChevronDown className="w-4 h-4 text-white" />
-          )}
-        </div>
-      </button>
-
-      {isExpanded && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="px-5 pb-5 space-y-3 bg-[#F5EFE6]"
+    <li>
+      <h4 className="text-base font-medium leading-snug text-ink">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-controls={panelId}
+          className="flex w-full items-start justify-between gap-4 py-5 text-left"
         >
-          <div className="pl-4 border-l-2 border-[#CBDCEB]">
-            <h5 className={sectionHeading}>Problem</h5>
-            <p className={sectionBody}>{project.problem}</p>
-          </div>
+          <span className="min-w-0">
+            <span className="block">{project.title}</span>
+            <Meta items={[project.period, project.team]} className="mt-1 font-normal" />
+          </span>
+          <ChevronDown
+            aria-hidden="true"
+            className={`mt-1 h-4 w-4 shrink-0 text-ink-muted transition-transform duration-300 ${
+              open ? 'rotate-180' : ''
+            }`}
+          />
+        </button>
+      </h4>
 
-          <div className="pl-4 border-l-2 border-[#E8DFCA]">
-            <h5 className={sectionHeading}>Approach</h5>
-            <p className={sectionBody}>{project.approach}</p>
-          </div>
-
-          <div className="pl-4 border-l-2 border-[#6D94C5]/40">
-            <h5 className={sectionHeading}>Outcome</h5>
-            <p className={sectionBody}>{project.outcome}</p>
-          </div>
-
-          <div className="pl-4 border-l-2 border-[#E8DFCA]">
-            <h5 className="font-semibold text-slate-900 mb-2 text-sm">Key Contributions</h5>
-            <ul className="space-y-1.5">
-              {project.contributions.map((contribution, idx) => (
-                <li key={idx} className="text-slate-600 text-sm leading-relaxed flex">
-                  <span className="text-[#6D94C5] mr-2">▸</span>
-                  <span>{contribution}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </motion.div>
-      )}
-    </motion.div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="body"
+            id={panelId}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="overflow-hidden"
+          >
+            <div className="space-y-5 pb-6">
+              <Block label="Problem">
+                <p className="text-sm leading-relaxed text-ink-soft">{project.problem}</p>
+              </Block>
+              <Block label="Approach">
+                <p className="text-sm leading-relaxed text-ink-soft">{project.approach}</p>
+              </Block>
+              <Block label="Outcome">
+                <p className="text-sm leading-relaxed text-ink-soft">{project.outcome}</p>
+              </Block>
+              <Block label="Key contributions">
+                <DashList items={project.contributions} />
+              </Block>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </li>
   );
 }
 
 export function Experience() {
   return (
-    <div className="space-y-8">
-      {experienceData.map((job, jobIndex) => (
-        <motion.div
-          key={job.company}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: jobIndex * 0.1 }}
-          className="bg-white rounded-3xl p-6 shadow-sm border border-[#E8DFCA]"
-        >
-          {/* Company Header */}
-          <div className="flex items-start gap-4 mb-6">
-            <div className="w-16 h-16 rounded-2xl overflow-hidden border border-[#E8DFCA] shadow-sm flex-shrink-0 bg-white flex items-center justify-center">
-              <img
-                src={logoMap[job.company]}
-                alt={job.company}
-                className="w-full h-full object-contain p-1"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-slate-900">{job.company}</h3>
-              <p className="text-lg text-slate-600">{job.role}</p>
-              <p className="text-sm text-slate-500">{job.period}</p>
-              {job.highlight && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2 + jobIndex * 0.1 }}
-                  className="mt-2 inline-flex items-center gap-2 px-3 py-1.5 bg-[#C49A6C]/20 text-[#8a5e2a] rounded-lg text-sm font-medium border border-[#C49A6C]/50"
-                >
-                  <span className="text-[#C49A6C]">★</span>
-                  {job.highlight}
-                </motion.div>
-              )}
-            </div>
-          </div>
-
-          {/* Projects */}
-          <div className="space-y-2">
-            {job.projects.map((project, projectIndex) => (
-              <ProjectCard
-                key={project.title}
-                project={project}
-                index={projectIndex}
-                accentBg={job.accentBg}
-              />
-            ))}
-          </div>
-        </motion.div>
-      ))}
-    </div>
+    <Section id="experience" title="Experience">
+      <div className="space-y-16">
+        {experienceData.map((job) => (
+          <Row
+            key={job.company}
+            sticky
+            left={
+              <>
+                <img
+                  src={logoMap[job.company]}
+                  alt=""
+                  className="h-11 w-11 rounded-md border border-line bg-white object-contain p-1"
+                />
+                <h3 className="mt-4 text-xl text-ink">{job.company}</h3>
+                <p className="mt-0.5 text-ink-soft">{job.role}</p>
+                <p className="mt-1 text-sm text-ink-muted">{job.period}</p>
+                {job.highlight && (
+                  <p className="mt-3 flex items-start gap-1.5 text-sm text-amber">
+                    <Award className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                    <span>{job.highlight}</span>
+                  </p>
+                )}
+              </>
+            }
+          >
+            <ul className="divide-y divide-line border-y border-line">
+              {job.projects.map((project) => (
+                <ProjectRow key={project.title} project={project} />
+              ))}
+            </ul>
+          </Row>
+        ))}
+      </div>
+    </Section>
   );
 }

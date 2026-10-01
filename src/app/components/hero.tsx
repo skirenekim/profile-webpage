@@ -1,116 +1,55 @@
-import { motion } from 'motion/react';
-import { Linkedin, FileText } from 'lucide-react';
+import { Linkedin, FileText, Mail } from 'lucide-react';
 import profilePic from '../../../img/profile_pic.JPG';
+import { Reveal } from './primitives';
+
+const links = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/skirene/', icon: Linkedin },
+  { label: 'Medium', href: 'https://skirene.medium.com/', icon: FileText },
+  { label: 'Email', href: 'mailto:keks1208@naver.com', icon: Mail },
+];
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#2a4f7c] text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left side - Profile image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative order-2 md:order-1"
-          >
-            <div className="relative w-64 h-64 mx-auto">
-              {/* Decorative rings */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 rounded-full border-2 border-[#CBDCEB]/25"
-                style={{ transform: 'scale(1.1)' }}
-              />
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-                className="absolute inset-0 rounded-full border-2 border-[#6D94C5]/30"
-                style={{ transform: 'scale(1.2)' }}
-              />
+    <section id="top" className="bg-hero text-paper">
+      <Reveal
+        className="mx-auto grid max-w-5xl items-center gap-10 px-6 py-16 md:grid-cols-[auto_1fr] md:gap-14 md:py-24"
+      >
+        <img
+          src={profilePic}
+          alt="Seong Kyung Kim"
+          width={192}
+          height={192}
+          className="mx-auto h-40 w-40 rounded-full object-cover ring-1 ring-white/20 md:mx-0 md:h-48 md:w-48"
+        />
 
-              {/* Profile photo */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#CBDCEB]/30 shadow-2xl">
-                <img
-                  src={profilePic}
-                  alt="Seong Kyung Kim"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
+        <div className="text-center md:text-left">
+          <p className="text-xs font-semibold uppercase tracking-widest text-paper/70">
+            Senior Data Scientist
+          </p>
+          <h1 className="mt-3 text-4xl sm:text-5xl md:text-6xl">Seong Kyung Kim</h1>
+          <p className="mt-1 text-xl text-paper/70">김성경</p>
+          <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-paper/85 md:mx-0">
+            Building agentic AI and ML systems for user behavior analytics at Electronic Arts.
+          </p>
+          <p className="mt-2 text-sm text-paper/70">Agentic AI · Applied ML · User Behavior Analytics</p>
 
-          {/* Right side - Text content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 md:order-2 text-center md:text-left"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              <h1 className="text-5xl md:text-6xl font-bold mb-3">
-                Seong Kyung Kim
-              </h1>
-              <p className="text-2xl md:text-3xl text-[#CBDCEB]/70 mb-2">
-                김성경
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mb-6"
-            >
-              <p className="text-base md:text-lg text-[#E8DFCA] mb-3 tracking-wide font-medium">
-                Senior Data Scientist
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                {['Agentic AI', 'Applied ML', 'User Behavior Analytics'].map((kw) => (
-                  <span
-                    key={kw}
-                    className="px-3 py-1 bg-[#6D94C5]/25 backdrop-blur-sm text-[#CBDCEB] rounded-full text-sm border border-[#CBDCEB]/30 font-medium"
-                  >
-                    {kw}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              className="flex flex-wrap gap-3 justify-center md:justify-start"
-            >
-              <a
-                href="https://www.linkedin.com/in/skirene/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-[#F5EFE6] text-[#1e3a5f] rounded-lg hover:bg-[#E8DFCA] transition-all hover:scale-105 font-medium shadow-lg"
-              >
-                <Linkedin className="w-5 h-5" />
-                LinkedIn
-              </a>
-              <a
-                href="https://skirene.medium.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 bg-[#6D94C5]/20 backdrop-blur-sm text-white rounded-lg hover:bg-[#6D94C5]/30 transition-all hover:scale-105 font-medium border border-[#CBDCEB]/30"
-              >
-                <FileText className="w-5 h-5" />
-                Medium
-              </a>
-            </motion.div>
-
-          </motion.div>
+          <ul className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-start">
+            {links.map(({ label, href, icon: Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  target={href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-paper/80 underline decoration-paper/30 underline-offset-4 transition-colors hover:text-paper hover:decoration-paper/70"
+                >
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-
+      </Reveal>
     </section>
   );
 }
