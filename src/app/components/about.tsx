@@ -20,10 +20,10 @@ const technicalSkills = [
   'TensorFlow',
 ];
 
-const glance = [
-  ['Experience', '5+ years in applied ML'],
-  ['Organizations', 'Electronic Arts · Krafton'],
-  ['Conference', 'Data + AI Summit 2026'],
+const glance: { term: string; lines: string[] }[] = [
+  { term: 'Experience', lines: ['5+ years in applied ML'] },
+  { term: 'Organizations', lines: ['Electronic Arts · Krafton'] },
+  { term: 'Education', lines: ['M.S. CS, Georgia Tech', 'M.S. Data & Society, LSE'] },
 ];
 
 export function About() {
@@ -36,10 +36,14 @@ export function About() {
           <div>
             <Label className="mb-3">At a glance</Label>
             <dl className="divide-y divide-tone-line border-y border-tone-line text-sm">
-              {glance.map(([term, value]) => (
+              {glance.map(({ term, lines }) => (
                 <div key={term} className="py-2.5">
                   <dt className="text-xs text-ink-muted">{term}</dt>
-                  <dd className="mt-0.5 text-ink">{value}</dd>
+                  {lines.map((line) => (
+                    <dd key={line} className="mt-0.5 text-ink">
+                      {line}
+                    </dd>
+                  ))}
                 </div>
               ))}
             </dl>
