@@ -49,6 +49,15 @@ export function Label({ children, className = '' }: { children: ReactNode; class
   );
 }
 
+/** Highlighter-style emphasis: a soft wash of the section's accent behind the words. Max 2–3 per paragraph. */
+export function Mark({ children }: { children: ReactNode }) {
+  return (
+    <mark className="-mx-0.5 rounded-sm bg-tone-accent/12 box-decoration-clone px-0.5 text-inherit">
+      {children}
+    </mark>
+  );
+}
+
 /** Labelled block of body copy. */
 export function Block({ label, children }: { label: string; children: ReactNode }) {
   return (
