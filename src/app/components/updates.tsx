@@ -14,12 +14,10 @@ type Milestone = {
 const milestones: Milestone[] = [
   {
     date: 'Jun 2026',
-    tag: 'Upcoming · Conference talk',
-    title: 'Speaking at Databricks Data + AI Summit',
-    description: 'Presenting on agent-based KPI reasoning and narrative generation.',
+    tag: 'Conference',
+    title: 'Attended Databricks Data + AI Summit',
+    description: 'Joined the annual Databricks conference on data engineering, analytics, and AI.',
     location: 'San Francisco',
-    link: 'https://www.databricks.com/dataaisummit/session/automating-kpi-reasoning-and-narrative-generation-agent-bricks-and',
-    linkLabel: 'View session',
   },
   {
     date: 'Dec 2025',

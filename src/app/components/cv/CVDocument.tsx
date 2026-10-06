@@ -19,16 +19,6 @@ const SKILLS = {
   technical: ['Databricks', 'Docker', 'PyTorch', 'Python', 'S3', 'Spark', 'SQL', 'Tableau', 'TensorFlow'],
 };
 
-const PRESENTATIONS = [
-  {
-    title: 'Automating KPI Reasoning and Narrative Generation with Agent Bricks',
-    venue: 'Databricks Data + AI Summit',
-    date: 'June 2026',
-    location: 'San Francisco, CA',
-    url: 'https://www.databricks.com/dataaisummit/session/automating-kpi-reasoning-and-narrative-generation-agent-bricks-and',
-  },
-];
-
 export function CVDocument() {
   return (
     <Document
@@ -118,18 +108,6 @@ export function CVDocument() {
           <Text style={styles.skillLabel}>Technical</Text>
           <Text style={styles.skillValue}>{SKILLS.technical.join(' · ')}</Text>
         </View>
-
-        {/* Conference Presentations */}
-        <Text style={styles.sectionTitle}>Conference Presentations</Text>
-        {PRESENTATIONS.map((p) => (
-          <View key={p.title} style={{ marginBottom: 9 }}>
-            <Text style={styles.presentationTitle}>{p.title}</Text>
-            <View style={styles.row}>
-              <Text style={styles.presentationMeta}>{p.venue} · {p.date} · {p.location}</Text>
-              <Link src={p.url} style={styles.presentationLink}>View Session</Link>
-            </View>
-          </View>
-        ))}
 
       </Page>
     </Document>

@@ -23,7 +23,7 @@ const technicalSkills = [
 const glance = [
   ['Experience', '5+ years in applied ML'],
   ['Organizations', 'Electronic Arts · Krafton'],
-  ['Speaking', 'Data + AI Summit 2026'],
+  ['Conference', 'Data + AI Summit 2026'],
 ];
 
 export function About() {
