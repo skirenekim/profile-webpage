@@ -33,7 +33,7 @@ export function Hero() {
           <p className="mt-1 text-xl text-ink-soft">김성경</p>
           <p className="mx-auto mt-5 max-w-2xl text-balance text-base leading-relaxed text-ink-soft md:mx-0">
             I build agentic AI and applied ML systems that turn how people actually behave into
-            clearer decisions — currently at Electronic Arts.
+            clearer decisions.
           </p>
 
           <p className="mt-2 text-sm text-ink-muted">{keywords.join(' · ')}</p>
