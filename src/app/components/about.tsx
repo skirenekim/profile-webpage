@@ -33,37 +33,17 @@ export function About() {
         sticky
         leftLastOnMobile
         left={
-        <aside className="space-y-8">
           <div>
             <Label className="mb-3">At a glance</Label>
             <dl className="divide-y divide-tone-line border-y border-tone-line text-sm">
               {glance.map(([term, value]) => (
                 <div key={term} className="py-2.5">
-                <dt className="text-xs text-ink-muted">{term}</dt>
-                <dd className="mt-0.5 text-ink">{value}</dd>
+                  <dt className="text-xs text-ink-muted">{term}</dt>
+                  <dd className="mt-0.5 text-ink">{value}</dd>
                 </div>
               ))}
             </dl>
           </div>
-
-          <div>
-            <Label className="mb-3">Core expertise</Label>
-            <div className="flex flex-wrap gap-1.5">
-              {coreExpertise.map((item) => (
-                <Chip key={item}>{item}</Chip>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <Label className="mb-3">Technical skills</Label>
-            <div className="flex flex-wrap gap-1.5">
-              {technicalSkills.map((item) => (
-                <Chip key={item}>{item}</Chip>
-              ))}
-            </div>
-          </div>
-        </aside>
         }
       >
         <div className="space-y-8">
@@ -85,6 +65,25 @@ export function About() {
               that are safe, healthy, and socially beneficial.
             </p>
           </Block>
+
+          <div className="grid gap-8 border-t border-tone-line pt-8 sm:grid-cols-2">
+            <div>
+              <Label className="mb-3">Core expertise</Label>
+              <div className="flex flex-wrap gap-1.5">
+                {coreExpertise.map((item) => (
+                  <Chip key={item}>{item}</Chip>
+                ))}
+              </div>
+            </div>
+            <div>
+              <Label className="mb-3">Technical skills</Label>
+              <div className="flex flex-wrap gap-1.5">
+                {technicalSkills.map((item) => (
+                  <Chip key={item}>{item}</Chip>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </Row>
     </Section>
