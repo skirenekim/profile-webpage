@@ -71,9 +71,9 @@ export const experienceData: Job[] = [
         approach:
           'Built a two-stage LLM pipeline (Genie → MLflow agent) for 9 KPI sections with a final executive summary pass, paired with an in-browser prompt management UI featuring version history, live preview, and one-click deployment.',
         outcome:
-          'Enabled analysts to own AI report quality end-to-end — iterating on prompts directly in the UI without code deployments — while delivering sub-second dashboard loads across multiple countries via a pre-computed Delta Lake cache. Presented the work at the EA Data Insight Forum, which brings together data teams from EA studios across regions.',
+          'Enabled analysts to own AI report quality end-to-end — iterating on prompts directly in the UI without code deployments — while delivering sub-second dashboard loads across multiple countries via a pre-computed Delta Lake cache. Presented the work at the FC Data & Insights Forum (Shanghai, Nov 2026), which brings together data teams from EA studios across regions.',
         contributions: [
-          'Presented the platform at the EA Data Insight Forum, which brings together data teams from EA studios across regions.',
+          'Presented the platform as "Automating the Monthly KPI Report with LLM Agents" at the FC Data & Insights Forum (Shanghai, Nov 2026), which brings together data teams from EA studios across regions.',
           'Implemented an in-browser prompt management UI with version history, live preview, and one-click deployment — enabling analysts to iterate on AI report prompts without engineering involvement.',
           'Designed a Genie → MLflow agent two-stage pipeline across 9 monthly report sections, with a final agent pass generating an executive summary with slogans and key points.',
           'Applied SMD-based 9-tier metric status classification across engagement, revenue, and game economy, standardizing interpretation for consistent AI analysis input.',

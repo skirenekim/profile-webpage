@@ -13,6 +13,14 @@ type Milestone = {
 
 const milestones: Milestone[] = [
   {
+    date: 'Nov 2026',
+    tag: 'Talk',
+    title: 'Presented at the FC Data & Insights Forum',
+    description:
+      'Attended the three-day forum (November 9–11) and gave a talk, "Automating the Monthly KPI Report with LLM Agents."',
+    location: 'Shanghai',
+  },
+  {
     date: 'Jun 2026',
     tag: 'Conference',
     title: 'Attended Databricks Data + AI Summit',
