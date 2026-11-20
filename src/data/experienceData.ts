@@ -31,17 +31,17 @@ export const experienceData: Job[] = [
         period: '2026.11 - Present',
         team: 'Individual Contributor',
         problem:
-          'The existing supervisor-style agent was a black box: the LLM decided which tools to call and in what order, so required evidence could be skipped, reasoning could not be traced, and one wrong judgement meant re-running the entire analysis.',
+          'The existing supervisor-style agent was a black box: the LLM decided which tools to call and in what order, so required evidence could be skipped, reasoning could not be traced, and one wrong judgment meant re-running the entire analysis.',
         approach:
-          'Redesigning it as a code-defined LangGraph agent where the graph, not the LLM, enforces the analysis order: deterministic fact extraction, mandatory evidence collection, a bounded discovery loop, structured reasoning, then validation and repair, with every claim linked to evidence so an analyst can trace, fix, and replay a single judgement.',
+          'Redesigning the agent as a code-defined LangGraph agent where the graph, not the LLM, enforces the analysis order: deterministic fact extraction, mandatory evidence collection, a bounded discovery loop, structured reasoning, then validation and repair, with every claim linked to evidence so an analyst can trace, fix, and replay a single judgment.',
         outcome:
-          'Architecture designed and in pilot on one report section: fact and evidence tools run end-to-end on production data and match source tables; live LLM reasoning and a blind evaluation against the supervisor agent are the next gates before rollout to all nine sections.',
+          'Designed a code-defined LangGraph architecture, now in pilot on one report section: fact and evidence tools run end-to-end on production data and match source tables; live LLM reasoning and a blind evaluation against the existing supervisor-style agent are the next gates before rollout to all 9 sections.',
         contributions: [
           'Code-defined orchestration: replaced LLM-chosen tool routing with a LangGraph StateGraph (typed state, conditional edges) that always runs fact extraction and mandatory evidence collection before any reasoning.',
           "Deterministic facts and scoped tools: moved all numbers to SQL/Python and enforced market and period as tool arguments checked on returned results, removing the path by which one market's data leaked into another's report.",
           'Structured logical reasoning: constrained LLM output to Observation → Hypotheses → Supporting/Contradicting Evidence → Assessment → Conclusion, so a correlation is not reported as a cause without sufficient evidence.',
           'Validation and conditional repair: built rule-based checks on numbers, scope, evidence references, and logic that route failures back by type, bounded by call budgets with explicit end states (resolved, budget exhausted, insufficient evidence, tool error).',
-          'Trace & Fix: persisted runs, evidence, claims, and overrides to Delta tables so analysts can trace conclusion → hypothesis → evidence ID → source data, override one judgement, and replay from reasoning onward with both versions preserved.',
+          'Trace & Fix: persisted runs, evidence, claims, and overrides to Delta tables so analysts can trace conclusion → hypothesis → evidence ID → source data, override one judgment, and replay from reasoning onward with both versions preserved.',
           'Controlled discovery loop: designed a Detect → Plan → Investigate → Assess cycle that calls Genie agents for drill-down only when anomalies appear, capped by iteration and tool-call limits.',
         ],
       },
