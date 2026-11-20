@@ -17,7 +17,7 @@ const milestones: Milestone[] = [
     tag: 'Talk',
     title: 'Presented at the FC Data & Insights Forum',
     description:
-      'Attended the three-day forum (November 9–11) and gave a talk, "Automating the Monthly KPI Report with LLM Agents."',
+      'Attended the three-day forum and gave a talk, "Automating the Monthly KPI Report with LLM Agents."',
     location: 'Shanghai',
   },
   {
